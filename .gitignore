@@ -1,0 +1,6 @@
+.vscode
+.idea
+.fleet
+__pycache__
+sandbox
+playground
