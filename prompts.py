@@ -1,5 +1,67 @@
 """This file contains the necessary prompts used for neural compilation."""
 
+x86_compile_prompt_simple = """you are a helpful assistant in compilation.
+you will act like a compiler to compile a C program into corresponding assembly code.
+you will not response any other information.
+We can assume there will only be one function body to be compiled.
+You should follow the AT&T syntax and uses explicit instruction operations to avoid any ambiguity.
+The code should be well-formatted and include annotations corresponding to the source code.
+Example Input:
+```c
+float foo(int i, int j, int arr[]) {
+    int sum = i;
+    int temp = j;
+    for(int i_1 = 0; i_1 < sum; i_1++) {
+        for(int j_1 = 0; j_1 < sum; j_1++) {
+            temp += arr[i_1] * arr[j_1];
+        }
+    }
+    return temp;
+}
+```
+Example Output, below is the things you need to generate:
+```x86
+    .text
+    .globl  foo
+foo:
+    pushq    %rbp
+    movq     %rsp, %rbp
+    movl     %edi, -4(%rbp)     # i: -4(%rbp)
+    movss   %xmm0, -8(%rbp)    # j: -8(%rbp)
+    movq     %rsi, -16(%rbp)    # arr: -16(%rbp), pointer
+    movl     -4(%rbp), %edi
+    movl     %edi, -20(%rbp)    # sum: -20(%rbp) = i
+    cvttss2si   -8(%rbp), %edi
+    movl     %edi, -24(%rbp)    # temp: -24(%rbp) = j
+    movl     $0, -28(%rbp)      # i_1: -28(%rbp) = 0
+.L1:
+    movl     -28(%rbp), %eax
+    cmpl     -20(%rbp), %eax    # i_1 < sum
+    jge     .L2
+    movl     $0, -32(%rbp)      # j_1: -32(%rbp) = 0
+.L3:
+    movl     -32(%rbp), %eax
+    cmpl     -20(%rbp), %eax    # j_1 < sum
+    jge     .L4
+    movq	-16(%rbp), %rax
+	movslq	-28(%rbp), %rcx
+	movl	(%rax,%rcx,4), %edx # arr[i_1]
+	movq	-16(%rbp), %rax
+	movslq	-32(%rbp), %rcx
+	imull	(%rax,%rcx,4), %edx # arr[i_1] * arr[j_1]
+	addl	-24(%rbp), %edx     
+	movl	%edx, -24(%rbp)     # temp += arr[i_1] * arr[j_1]
+    addl     $1, -32(%rbp)      # j_1++
+    jmp     .L3
+.L4:
+    addl     $1, -28(%rbp)      # i_1++
+    jmp     .L1
+.L2:
+    cvtsi2ssl   -24(%rbp), %xmm0   # return temp
+    popq	%rbp
+    retq
+```
+"""
 
 # C -> LLM -> x86, in 3 steps
 x86_compile_prompt = """you are a helpful assistant in compilation.
@@ -169,6 +231,10 @@ Finally, respond the final assembly code in the following format:
 Note that the <final assembly> denotes the final assembly code in your think process.
 In conclusion, your job is to think step by step and output the final assembly code from a C program input. except the thought process, return only the final assembly code.
 """
+
+
+lego_split_prompt = 'Extract the outermost control blocks from a lengthy C function and generate several code snippets based on the natural boundaries of control keywords, such as `for`, `while` loops, and `if-else` blocks. Return these extracted code snippets as a list of strings in their natural order in a JSON format.\n\n# Steps\n\n1. **Identify Outermost Control Blocks**: \n    - Focus on the outermost `for`, `while`, and `if-else` blocks of the C function.\n    - Ensure nested control blocks are part of their parent block, and do not split them separately.\n   \n2. **Extract Code Snippets**:\n    - For each identified outer block, extract the code starting from the control keyword up until the closing brace of that block.\n    - Maintain the order of these blocks as they appear in the function.\n\n3. **Prepare JSON Output**:\n    - Gather the extracted code snippets into a list of strings.\n    - Format the output in JSON, where each item in the list is a string representing one complete control block.\n\n# Output Format\n\nThe resulting output should be a JSON format, containing a list of strings. Each string should represent a full control block extracted from the C function, with a prefix of comment that indicates the order of appearance:\n\n```json\n{\n  "code_snippets": [\n    "/*block x*/string containing the first outermost control block",\n    "/*block y*/string containing the second outermost control block",\n    // More snippets...\n  ]\n}\n```\n\n# Examples\n\n## Input\n```c\n#include <stdio.h>\nint global_g = 10;\nvoid exampleFunction() {\n    int i = 0;\n    if (i < 10) {\n        printf("i is less than 10");\n    }\n    for (int j = 0; j < 5; j++) {\n        printf("j: %d", j);\n    }\n    while (i > 0) {\n        i--;\n    }\n    return;\n}\n```\n\n## Output\n```json\n{\n  "code_snippets": [\n    "/*Before function*/#include <stdio.h> int global_g = 10;",\n    "/*Function begin and Entryblock*/void exampleFunction() {\\n    int i = 0;",\n    "/*block1*/if (i < 10) { printf(\\"i is less than 10\\"); }",\n    "/*block2*/for (int j = 0; j < 5; j++) { printf(\\"j: %d\\", j); }",\n    "/*block3*/while (i > 0) { i--; }",\n    "/*block4*/return;\\n}",\n     "/*After function*/",\n  ]\n}\n```\n\n# Notes\n\n- Ensure that syntax errors in each block are minimized by maintaining the integrity of bracketed sections.\n- Assume well-formed input where braces are correctly balanced, and there\'s only one function body in the code(which you need to handle).\n- Function begin(function entry block) should be explicitly marked.\n- Outside of the function doesn\'t require handling, and respond them exactly the same in the code_snippets: before function appears first, after function appears last.\n- Make sure the sum of content in code_snippets is the same as the original function.'
+
 
 # C -> LLM -> C, only rename same-name variables, then we can follow-up a src-level verification
 c_src_rename_prompt = """you are a helpful assistant in compilation.
