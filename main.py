@@ -4,78 +4,14 @@ import os
 import json
 import subprocess
 from datasets import load_dataset
-import asyncio
+import concurrent.futures
 import tempfile
+import asyncio
+from openai import OpenAI, AsyncOpenAI
+from datetime import datetime
 
-
-logger = get_logger("INFO", "temp.log")
-
-# base class
-class Chat:
-    def __init__(self, client, model_name, system_prompt = "You are a helpful assistant.",allow_system_prompt=True):
-        self.client = client
-        self.model_name = model_name
-        self.messages = []
-        self.allow_system_prompt = allow_system_prompt
-        self.system_prompt = system_prompt
-        self.reset()
-        
-    # arbitrary chat
-    def chat(self, user_input=None):
-        if user_input is None:
-            user_input = input("User: \n")
-        self.messages.append({"role": "user", "content": user_input})
-        response = self.client.chat.completions.create(
-            model = self.model_name,
-            temperature = 0.0,
-            messages = self.messages,
-        )
-        rsp_content = response.choices[0].message.content
-        self.messages.append({"role": "assistant", "content": rsp_content})
-    
-    # clear the chat history
-    def reset(self):
-        self.messages = []
-        if self.allow_system_prompt:
-            self.messages.append(
-                {"role": "system", "content": self.system_prompt}
-            )
-            
-    # print all the chat history
-    def print_history(self):
-        logger.debug("-----Chat History-----")
-        for message in self.messages:
-            logger.debug(f"###{message['role']}: {message['content']}")
-        logger.debug("-----------------------")
-            
-    # get the last message
-    def get_response(self):
-        return self.messages[-1]['content']
-
-def llm_compile(chatbot: Chat, code, case_id):
-    logger.debug(f"Compiling code:\n\n{code}")
-    chatbot.chat(code)
-    response = chatbot.get_response()
-    try:
-        thought = response.split("</think>")[0].strip()
-        logger.debug(f"Thought process:\n\n{thought}")
-        response = response.split("</think>")[-1].strip()
-        parsed_response = json.loads(response)
-        x86_asm = parsed_response["x86"]
-    except json.JSONDecodeError:
-        logger.warning("Failed to parse JSON response. Using raw response.")
-        x86_asm = response
-    logger.debug(f"Final assembly code:\n\n{x86_asm}")
-    logger.debug(f"Sample {case_id}:\n{code}\nOutput:\n{x86_asm}")
-    with open(f"tmp_{case_id}.s", "w") as f:
-        if x86_asm is not None:
-            f.write(x86_asm)
-            f.close()
-    return
-    
-def cleanup(path):
-    logger.info("Cleaning up temporary files...")
-    # remove all files and directories in the path
+def cleanup(path, logger):
+    logger.info(f"Cleaning up temporary files in {path}...")
     for root, dirs, files in os.walk(path, topdown=False):
         for name in files:
             file_path = os.path.join(root, name)
@@ -91,240 +27,470 @@ def cleanup(path):
                 logger.error(f"Error removing directory {dir_path}: {e}")
     logger.info("Cleanup complete.")
 
-async def test_dataset(chatbot: Chat, begin_id = 0, end_id = 10):
-    dataset_name = "mistral0105/exebench_io_validated_full_cleaned"
+def process_item(case_id, data, logger, failed_id, passed_id, base_dir, fail_dir, model_name, client):
+    global x86_compile_prompt
+    # global logger
+    logger.info(f"--- Processing case {case_id} ---")
+    try:
+        id = 0
+        x86_id = None
+        for name in data["asm"]["target"]:
+            if name == "real_gcc_x86_O0":
+                x86_id = id
+            else:
+                id += 1
+        if x86_id is None:
+            logger.warning(f"Case {case_id} FAILED: No x86 assembly found. Skipping.")
+            failed_id.append(case_id)
+            return
+        x86_code = data["asm"]["code"][x86_id]
+        c_deps: str = data["real_deps"]
+        c_deps = c_deps[: c_deps.rfind("# 1")]
+        c_code = c_deps
+        c_code += data["func_def"]
+        c_exe = data["real_exe_wrapper"]
+        if c_exe == None:
+            logger.warning(f"Case {case_id} FAILED: No executable wrapper found. Skipping.")
+            failed_id.append(case_id)
+            return
+        c_exe_cleaned = c_exe
+        start = c_exe.find("""extern "C" {""")
+        end = c_exe.find("}", start + 1)
+        func_decl = data["func_def"]
+        end2 = func_decl.find("{", start + 1)
+        func_decl = func_decl[:end2]
+        c_exe_cleaned = (
+            c_exe[:start]
+            + 'extern "C" {\n'
+            + func_decl
+            + ";\n}\n"
+            + c_exe[end + 1 :]
+        )
+        start = c_exe_cleaned.find("#include <clib/synthesizer.h")
+        end = c_exe_cleaned.find(">", start + 1)
+        c_exe_cleaned2 = c_exe_cleaned[:start] + c_exe_cleaned[end + 1 :]
+        final_c_exe = c_exe_cleaned2
+        inputs = data["real_io_pairs"]["input"]
+        outputs = data["real_io_pairs"]["output"]
+        if len(inputs) == 0 and len(outputs) == 0:
+            logger.warning(f"Case {case_id}: No inputs or outputs found. Skipping.")
+            return
+        var_values_dict: dict = {}
+        out_dict: dict = {}
+        out_count = 0
+        input_count = 0
+        for pair in inputs:
+            input_count += 1
+            for i in range(len(pair["var"])):
+                var = pair["var"][i]
+                value = pair["value"][i]
+                if var not in var_values_dict:
+                    var_values_dict[var] = []
+                cur_values = var_values_dict[var]
+                cur_values.append(value)
+        for pair in outputs:
+            out_count += 1
+            for i in range(len(pair["var"])):
+                var = pair["var"][i]
+                value = pair["value"][i]
+                if var not in out_dict:
+                    out_dict[var] = []
+                out_dict[var].append(value)
+        input_dir = os.path.join(base_dir, f"input_{case_id}")
+        output_dir = os.path.join(base_dir, f"output_{case_id}")
+        os.makedirs(input_dir, exist_ok=True)
+        os.makedirs(output_dir, exist_ok=True)
+        try:
+            logger.debug(f"Case {case_id}: Writing input JSON files to {input_dir}")
+            for i in range(input_count):
+                with open(os.path.join(input_dir, f"in{i}.json"), "w") as data_file:
+                    data_file.write("{\n")
+                    for j, (k, v) in enumerate(var_values_dict.items()):
+                        value = v[i]
+                        data_file.write(f'    "{k}": {value}')
+                        if j != len(var_values_dict) - 1:
+                            data_file.write(",")
+                        data_file.write("\n")
+                    data_file.write("}")
+            logger.debug(f"Case {case_id}: Writing output JSON files to {output_dir}")
+            for i in range(out_count):
+                with open(os.path.join(output_dir, f"out{i}.json"), "w") as data_file:
+                    data_file.write("{\n")
+                    for j, (k, v) in enumerate(out_dict.items()):
+                        value = v[i]
+                        data_file.write(f'    "{k}": {value}')
+                        if j != len(out_dict) - 1:
+                            data_file.write(",")
+                        data_file.write("\n")
+                    data_file.write("}\n")
+            c_file_path = os.path.join(base_dir, f"tmp_{case_id}.c")
+            logger.debug(f"Case {case_id}: Writing C code to {c_file_path}")
+            with open(c_file_path, "w") as f:
+                if c_code is not None:
+                    f.write(c_code)
+            logger.debug(f"Case {case_id}: C code content:\n{c_code}")
+            ref_asm_path = os.path.join(base_dir, f"tmp_ref_{case_id}.s")
+            logger.debug(f"Case {case_id}: Writing reference x86 assembly to {ref_asm_path}")
+            with open(ref_asm_path, "w") as f:
+                if x86_code is not None:
+                    f.write(x86_code)
+            driver_cpp_path = os.path.join(base_dir, f"tmp_driver_{case_id}.cpp")
+            logger.debug(f"Case {case_id}: Writing driver C++ code to {driver_cpp_path}")
+            with open(driver_cpp_path, "w") as f:
+                if final_c_exe is not None:
+                    f.write(final_c_exe)
+            logger.debug(f"Case {case_id}: Driver C++ content:\n{final_c_exe}")
+        except IOError as e:
+            logger.error(f"Case {case_id} FAILED: File writing error: {e}")
+            failed_id.append(case_id)
+            return
+        driver_asm_path = os.path.join(base_dir, f"tmp_driver_{case_id}.s")
+        compile_cmd = ["g++", "-S", driver_cpp_path, "-o", driver_asm_path]
+        logger.debug(f"Case {case_id}: Compiling driver code: {' '.join(compile_cmd)}")
+        try:
+            ret = subprocess.run(
+                compile_cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                cwd=base_dir,
+                check=True,
+                timeout=30
+            )
+            logger.debug(f"Case {case_id}: Driver compilation successful.")
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Case {case_id} FAILED: Driver compilation failed. Return code: {e.returncode}")
+            logger.error(f"Stderr: {e.stderr.decode()}")
+            failed_id.append(case_id)
+            return
+        except subprocess.TimeoutExpired:
+            logger.error(f"Case {case_id} FAILED: Driver compilation timed out.")
+            failed_id.append(case_id)
+            return
+        except Exception as e:
+            logger.error(f"Case {case_id} FAILED: An unexpected error occurred during driver compilation: {e}")
+            failed_id.append(case_id)
+            return
+        logger.debug(f"Case {case_id}: Preparing request for model {model_name}")
+        messages = [
+            {"role": "system", "content": x86_compile_prompt},
+            {"role": "user", "content": c_code},
+        ]
+        x86_asm = None
+        try:
+            logger.info(f"Case {case_id}: Sending request to {model_name}...")
+            
+            # use subprocess to call the model
+            # run curl https://api.deepseek.com/chat/completions -H "Content-Type: application/json" -H "Authorization: Bearer xxxx" -d '{ "model": "deepseek-chat", "messages": [ {"role": "system", "content": x86_compile_prompt}, {"role": "user", "content": c_code}],"stream": false}'
+            # and get the response, extract its choices[0].message.content
+            
+            # load x86_compile_prompt and c_code as single line strings to avoid json parsing issues
+            # and parse it as json
+            # ret = subprocess.run(
+            #     ["curl", 
+            #     "https://api.deepseek.com/chat/completions", 
+            #     "-H", 
+            #     "Content-Type: application/json", 
+            #     "-H", 
+            #     f"Authorization: Bearer {os.getenv('DEEPSEEK_API_KEY')}", 
+            #     "-d", 
+            #     json.dumps({
+            #         "model": model_name,
+            #         "messages": [
+            #             {"role": "system", "content": x86_compile_prompt},
+            #             {"role": "user", "content": c_code}
+            #         ],
+            #         "stream": False,
+            #         "temperature": 0.0
+            #     })
+            #     ],
+            #     stdout=subprocess.PIPE,
+            #     stderr=subprocess.PIPE,
+            #     cwd=base_dir,
+            #     check=True,
+            #     # timeout=120,
+            # )
+            # # parse the response
+            # response = ret.stdout.decode()
+            # logger.info(f"Case {case_id}: Received response from {model_name}.")
+            # # parse json
+            # try:
+            #     completion = json.loads(response)
+            #     if "choices" in completion and len(completion["choices"]) > 0:
+            #         response = completion["choices"][0]["message"]["content"]
+            #     else:
+            #         logger.error(f"Case {case_id}: Invalid response format from {model_name}.")
+            #         failed_id.append(case_id)
+            #         return
+            # except json.JSONDecodeError:
+            #     logger.error(f"Case {case_id}: Failed to parse response as JSON. Raw response: {response}")
+            #     failed_id.append(case_id)
+            #     return
+            completion = client.chat.completions.create(
+                model=model_name,
+                temperature=0.0,
+                messages=messages,
+            )
+            response = completion.choices[0].message.content
+            
+            logger.debug(f"Case {case_id}: Received response from {model_name}.")
+            logger.debug(f"Case {case_id}: Raw response:\n{response}")
+            try:
+                if "</think>" in response:
+                    thought = response.split("</think>")[0].strip()
+                    logger.debug(f"Case {case_id}: Thought process:\n{thought}")
+                    response_content = response.split("</think>")[-1].strip()
+                else:
+                    response_content = response
+                # get asm from response_content, between '```x86' and '```'
+                if "```x86" in response_content:
+                    x86_asm = response_content.split("```x86")[-1].split("```")[0].strip()
+                    logger.info(f"Case {case_id}: C source code:\n{c_code}")
+                    logger.info(f"Case {case_id}: Extracted x86 assembly:\n{x86_asm}") #DEBUG
+                else:
+                    logger.warning(f"Case {case_id}: No x86 assembly found in response. Using raw response.")
+                    x86_asm = response_content
+            except Exception as e:
+                logger.error(f"Case {case_id}: Error processing LLM response content: {e}")
+                x86_asm = response
+        except Exception as e:
+            logger.error(f"Case {case_id} FAILED: API call to {model_name} failed: {e}")
+            failed_id.append(case_id)
+            return
+        if x86_asm is None or not x86_asm.strip():
+                logger.error(f"Case {case_id} FAILED: Failed to obtain valid assembly code from the model.")
+                failed_id.append(case_id)
+                return
+        logger.debug(f"Case {case_id}: Final assembly code to be used:\n{x86_asm}")
+        out_asm_path = os.path.join(base_dir, f"tmp_{case_id}.s")
+        try:
+            logger.info(f"Case {case_id}: Writing generated assembly to {out_asm_path}")
+            with open(out_asm_path, "w") as f:
+                f.write(x86_asm)
+        except IOError as e:
+            logger.error(f"Case {case_id} FAILED: Failed to write generated assembly file: {e}")
+            failed_id.append(case_id)
+            return
+        executable_path = os.path.join(base_dir, f"tmp_{case_id}")
+        compile_cmd = ["g++", out_asm_path, driver_asm_path, "-o", executable_path]
+        logger.debug(f"Case {case_id}: Compiling final executable: {' '.join(compile_cmd)}")
+        try:
+            ret = subprocess.run(
+                compile_cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                cwd=base_dir,
+                check=True,
+                timeout=30
+            )
+            logger.debug(f"Case {case_id}: Final compilation successful.")
+        except subprocess.CalledProcessError as e:
+            logger.error(f"Case {case_id} FAILED: Final compilation failed. Return code: {e.returncode}")
+            logger.error(f"Stderr: {e.stderr.decode()}")
+            # for compilation error, we will save it as a fail reason to the file
+            # we can directly append the error message to the tmp_{case_id}.s file
+            with open(out_asm_path, "a") as f:
+                # e.stderr.decode() may be multiple lines, so we need to join them
+                compile_error_message: str = e.stderr.decode()
+                # split it by lines
+                compile_error_lines = compile_error_message.splitlines()
+                f.write("\n# Compilation error:\n")
+                for line in compile_error_lines:
+                    f.write(f"# {line}\n")
+                f.close()
+            # copy to fail_dir
+            fail_dir = os.path.join(fail_dir, f"failed_{case_id}")
+            os.makedirs(fail_dir, exist_ok=True)
+            with open(out_asm_path, "r") as f:
+                asm_content = f.read()
+            with open(os.path.join(fail_dir, f"tmp_{case_id}.c"), "w") as f:
+                f.write(c_code)
+            with open(os.path.join(fail_dir, f"tmp_driver_{case_id}.cpp"), "w") as f:
+                f.write(final_c_exe)
+            with open(os.path.join(fail_dir, f"tmp_{case_id}.s"), "w") as f:
+                f.write(asm_content)
+            failed_id.append(case_id)
+            return
+        except subprocess.TimeoutExpired:
+            logger.error(f"Case {case_id} FAILED: Final compilation timed out.")
+            failed_id.append(case_id)
+            return
+        except Exception as e:
+            logger.error(f"Case {case_id} FAILED: An unexpected error occurred during final compilation: {e}")
+            failed_id.append(case_id)
+            return
+        local_err = 0
+        local_succ = 0
+        logger.debug(f"Case {case_id}: Starting execution and validation for {input_count} inputs.")
+        for j in range(input_count):
+            input_json_path = os.path.join(input_dir, f"in{j}.json")
+            output_json_path = os.path.join(output_dir, f"out{j}.json")
+            real_output_json_path = os.path.join(output_dir, f"out{j}_real.json")
+            exec_cmd = [executable_path, input_json_path, real_output_json_path]
+            logger.debug(f"Case {case_id}, Input {j}: Executing: {' '.join(exec_cmd)}")
+            try:
+                ret = subprocess.run(
+                    exec_cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    timeout=10,
+                    check=True
+                )
+                logger.debug(f"Case {case_id}, Input {j}: Execution successful.")
+                try:
+                    with open(real_output_json_path, "r") as f_real:
+                        real_output = f_real.read()
+                    with open(output_json_path, "r") as f_expected:
+                        expected_output = f_expected.read()
+                    json_my = json.loads(real_output)
+                    json_ref = json.loads(expected_output)
+                    if json_my == json_ref:
+                        logger.debug(f"Case {case_id}, Input {j}: Output matches expected.")
+                        local_succ += 1
+                    else:
+                        logger.warning(f"Case {case_id}, Input {j}: Output mismatch.")
+                        logger.warning(f"Expected: {json_ref}")
+                        logger.warning(f"Got: {json_my}")
+                        local_err += 1
+                except FileNotFoundError as e:
+                        logger.error(f"Case {case_id}, Input {j}: Output file not found: {e}. Marking as error.")
+                        local_err += 1
+                except json.JSONDecodeError as e:
+                    logger.error(f"Case {case_id}, Input {j}: JSON decode failed for output comparison: {e}. Marking as error.")
+                    logger.error(f"Real output content: {real_output}")
+                    logger.error(f"Expected output content: {expected_output}")
+                    local_err += 1
+                    break
+                except Exception as e:
+                    logger.error(f"Case {case_id}, Input {j}: Unexpected error during output comparison: {e}. Marking as error.")
+                    local_err += 1
+                    break
+            except subprocess.TimeoutExpired:
+                logger.warning(f"Case {case_id}, Input {j}: Execution timed out.")
+                local_err += 1
+                break
+            except subprocess.CalledProcessError as e:
+                logger.warning(f"Case {case_id}, Input {j}: Execution failed. Return code: {e.returncode}")
+                logger.warning(f"Stderr: {e.stderr.decode()}")
+                local_err += 1
+                break
+            except Exception as e:
+                logger.error(f"Case {case_id}, Input {j}: Unexpected error during execution: {e}")
+                local_err += 1
+                break
+        if local_err == 0 and local_succ == input_count:
+            logger.info(f"Case {case_id}: PASSED ({local_succ}/{input_count} inputs correct).")
+            passed_id.append(case_id)
+        else:
+            logger.info(f"Case {case_id}: FAILED ({local_err}/{input_count} inputs failed or errored).")
+            failed_id.append(case_id)
+            logger.info(f"Failed assembly code {case_id}:\n{x86_asm}")
+    except Exception as e:
+        logger.error(f"Case {case_id} FAILED: UNEXPECTED ERROR during processing: {e}", exc_info=True)
+        if case_id not in failed_id:
+                failed_id.append(case_id)
+    finally:
+        logger.info(f"--- Finished processing case {case_id} ---")
+
+def test_dataset(model_name = "deepseek-chat", begin_id = 0, end_id = 10, logger = None, mask_id = None):
+
+    # dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
+    dataset_name = "mistral0105/exebench_io_hard2_full_cleaned" # 1996
     ds = load_dataset(dataset_name)["train"]
     logger.info(f"Loaded dataset {dataset_name} with {len(ds)} samples.")
     tmp_dir = "sandbox/tmp"
+    fail_dir = "sandbox/failed"
     os.makedirs(tmp_dir, exist_ok=True)
-    logger.info(f"Temporary directory created at {tmp_dir}.")
-    cleanup(tmp_dir)
+    os.makedirs(fail_dir, exist_ok=True)
+    base_dir = os.path.abspath(tmp_dir)
+    logger.info(f"Temporary directory created at {base_dir}.")
+    cleanup(base_dir, logger)
     logger.info("Initial Cleanup complete.")
-    os.chdir(tmp_dir)
-    logger.info(f"Changed working directory to {tmp_dir}.")
-
+    client: OpenAI = get_client(model_name)
     
     passed_id = []
     failed_id = []
-    
-    async def process_item(case_id, data, sem):
-        async with sem:
-            id = 0
-            x86_id = None
-            for name in data["asm"]["target"]:
-                if name == "real_gcc_x86_O0":
-                    x86_id = id
-                else:
-                    id += 1
-            if x86_id is None:
-                logger.warning(f"No x86 assembly found for sample {case_id}.")
-                return
-            x86_code = data["asm"]["code"][x86_id]
-            c_deps: str = data["real_deps"]
-            c_deps = c_deps[: c_deps.rfind("# 1")]
-            c_code = c_deps
-            c_code += data["func_def"]
-            c_exe = data["real_exe_wrapper"]
-            if c_exe == None:
-                logger.warning(f"No executable found for sample {case_id}.")
-                return
-            c_exe_cleaned = c_exe
-            start = c_exe.find("""extern "C" {""")
-            end = c_exe.find("}", start + 1)
-            func_decl = data["func_def"]
-            end2 = func_decl.find("{", start + 1)
-            func_decl = func_decl[:end2]
-            c_exe_cleaned = (
-                c_exe[:start]
-                + 'extern "C" {\n'
-                + func_decl
-                + ";\n}\n"
-                + c_exe[end + 1 :]
-            )
-            start = c_exe_cleaned.find("#include <clib/synthesizer.h")
-            end = c_exe_cleaned.find(">", start + 1)
-            c_exe_cleaned2 = c_exe_cleaned[:start] + c_exe_cleaned[end + 1 :]
-            final_c_exe = c_exe_cleaned2
-            inputs = data["real_io_pairs"]["input"]
-            outputs = data["real_io_pairs"]["output"]
-            if len(inputs) == 0 and len(outputs) == 0:
-                logger.warning(f"No inputs or outputs found for sample {case_id}.")
-                return
-            var_values_dict: dict = {}
-            out_dict: dict = {}
-            out_count = 0
-            input_count = 0
-            for pair in inputs:
-                input_count += 1
-                for i in range(len(pair["var"])):
-                    var = pair["var"][i]
-                    value = pair["value"][i]
-                    if var not in var_values_dict:
-                        var_values_dict[var] = []
-                    cur_values = var_values_dict[var]
-                    cur_values.append(value)
-            for pair in outputs:
-                out_count += 1
-                for i in range(len(pair["var"])):
-                    var = pair["var"][i]
-                    value = pair["value"][i]
-                    if var not in out_dict:
-                        out_dict[var] = []
-                    out_dict[var].append(value)
-            if not os.path.exists(f"input_{case_id}"):
-                os.mkdir(f"input_{case_id}")
-            os.chdir(f"input_{case_id}")
-            for i in range(input_count):
-                data_file = open(f"in{i}.json", "w")
-                data_file.write("{\n")
-                for j, (k, v) in enumerate(var_values_dict.items()):
-                    value = v[i]
-                    data_file.write(f'    "{k}": {value}')
-                    if j != len(var_values_dict) - 1:
-                        data_file.write(",")
-                    data_file.write("\n")
-                data_file.write("}")
-                data_file.close()
-            os.chdir("..")
-            if not os.path.exists(f"output_{case_id}"):
-                os.mkdir(f"output_{case_id}")
-            os.chdir(f"output_{case_id}")
-            for i in range(out_count):
-                data_file = open(f"out{i}.json", "w")
-                data_file.write("{\n")
 
-                for j, (k, v) in enumerate(out_dict.items()):
-                    value = v[i]
-                    data_file.write(f'    "{k}": {value}')
-                    if j != len(out_dict) - 1:
-                        data_file.write(",")
-                    data_file.write("\n")
-                data_file.write("}\n")
-                data_file.close()
-            os.chdir("..")
-            
-            with open(f"tmp_{case_id}.c", "w") as f:
-                if c_code is not None:
-                    f.write(c_code)
-                    f.close()
-            logger.info(f"C code {case_id}:\n{c_code}")
-
-            with open(f"tmp_ref_{case_id}.s", "w") as f:
-                if x86_code is not None:
-                    f.write(x86_code)
-                    f.close()
-            with open(f"tmp_driver_{case_id}.cpp", "w") as f:
-                if final_c_exe is not None:
-                    f.write(final_c_exe)
-                    f.close()
-            ret = subprocess.run(
-                ["g++", "-S", f"tmp_driver_{case_id}.cpp", "-o", f"tmp_driver_{case_id}.s"],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-            )
-            if ret.returncode != 0:
-                logger.warning(f"Driver Code Compilation error: {ret.stderr.decode()}")
-                return
-            
-            with open(f"tmp_{case_id}.c", "r") as f:
-                c_code = f.read()
-            
-                    
-            await asyncio.to_thread(
-                llm_compile,
-                chatbot,
-                c_code,
-                case_id,
-            )
-            ret = subprocess.run(
-                ["g++", f"tmp_{case_id}.s", f"tmp_driver_{case_id}.s", "-o", f"tmp_{case_id}"],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-            )
-            if ret.returncode != 0:
-                logger.warning(f"Compilation error: {ret.stderr.decode()}")
-                return
-            local_err = 0
-            local_succ = 0
-            for j in range(input_count):
-                try:
-                    ret = subprocess.run(
-                        [f"./tmp_{case_id}", f"input_{case_id}/in{j}.json", f"output_{case_id}/out{j}_real.json"],
-                        stdout=subprocess.PIPE,
-                        stderr=subprocess.PIPE,
-                        timeout=10,
-                    )
-                except subprocess.TimeoutExpired:
-                    logger.warning(
-                        f"WARNING: code execute timeout for input {j} in case {case_id}"
-                    )
-                    local_err += 1
-                    break
-                if ret.returncode != 0:
-                    logger.warning(
-                        f"WARNING: code failed to execute for input {j} in case {case_id}"
-                    )
-                    local_err += 1
-                    break
-                # compare the output with the expected output
-                with open(f"output_{case_id}/out{j}_real.json", "r") as f:
-                    real_output = f.read()
-                with open(f"output_{case_id}/out{j}.json", "r") as f:
-                    expected_output = f.read()
-                try:
-                    json_my = json.loads(real_output)
-                    json_ref = json.loads(expected_output)
-                except json.JSONDecodeError:
-                    logger.error(f"SKIP: json decode failed for input {j}")
-                    local_err += 1
-                    break
-                if json_my == json_ref:
-                    local_succ += 1
-                else:
-                    local_err += 1
-            logger.info(f"Local error rate {case_id}: {local_err*100/input_count}%")
-            if local_err == 0:
-                logger.info(f"Sample {case_id} passed.")
+    max_concurrent = 25
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_concurrent) as executor:
+        futures = []
+        for case_id, data in enumerate(ds):
+            if case_id < begin_id:
+                continue
+            if mask_id is not None and case_id in mask_id:
+                logger.info(f"Case {case_id} is masked. Considered PASSED. Skipping.")
                 passed_id.append(case_id)
-            else:
-                logger.info(f"Sample {case_id} failed.")
-                # log failed asm
-                with open(f"tmp_{case_id}.s", "r") as f:
-                    failed_asm = f.read()
-                logger.info(f"Failed assembly code {case_id}:\n{failed_asm}")
-                failed_id.append(case_id)
-    tasks = []
-    sem = asyncio.Semaphore(20)  # Limit concurrent tasks
-    for case_id, data in enumerate(ds):
-        if case_id < begin_id:
-            continue
-        if case_id >= end_id:
-            break
-        tasks.append(asyncio.create_task(
-            process_item(case_id, data, sem)
-        ))
-    await asyncio.gather(*tasks)
+                continue
+            if case_id >= end_id:
+                break
+            futures.append(executor.submit(process_item, case_id, data, logger, failed_id, passed_id, base_dir, fail_dir, model_name, client))
+        for future in concurrent.futures.as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                logger.error(f"Error processing case: {e}")
+                
     logger.info("All tasks completed.")
-    logger.info(f"Passed IDs: {passed_id}")
-    logger.info(f"Failed IDs: {failed_id}")
-    logger.info(f"Pass rate:{len(passed_id)*100 / (end_id - begin_id)}%")
-            
-            
-    
+    total_processed = len(passed_id) + len(failed_id)
+    logger.info(f"--- Final Summary ---")
+    logger.info(f"Model: {model_name}")
+    logger.info(f"Processed cases: {begin_id} to {end_id-1} (Attempted: {end_id - begin_id})")
+    logger.info(f"Total successfully processed and validated: {len(passed_id)}")
+    logger.info(f"Total failed or errored: {len(failed_id)}")
+    logger.info(f"Passed IDs: {sorted(passed_id)}")
+    logger.info(f"Failed IDs: {sorted(failed_id)}")
+    if (end_id - begin_id) > 0:
+        pass_rate = len(passed_id) * 100 / (end_id - begin_id)
+        logger.info(f"Pass rate (based on attempted range): {pass_rate:.2f}%")
+    else:
+        logger.info("Pass rate: N/A (no cases attempted)")
+    logger.info(f"---------------------")
+    return failed_id, passed_id
 
 def main():
-    model_name = "deepseek-chat"  # Example model name
-    client = get_client(model_name)
-    logger.info(f"Client created for model {model_name}.")
-    chatbot = Chat(client, model_name, system_prompt=x86_compile_prompt)
-    logger.info("Starting test_dataset...")
-    asyncio.run(
-        test_dataset(
-            chatbot,
-            begin_id=0,
-            end_id=20,
-        )
+    model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
+    need_log = True
+    if not need_log:
+        logger = get_logger("INFO")
+    else:
+        log_dir = "logs"
+        
+        os.makedirs(log_dir, exist_ok=True)
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        log_file = os.path.join(log_dir, f"{model_name.replace('/', '_')}_{timestamp}.log")
+        logger = get_logger("INFO", log_file)
+        logger.info(f"Logging to {log_file}")
+    #
+    # gpt-4.1-nano not usable, very low quality
+    # mini is quite good, 4.1 better
+    
+    # first test with gpt-4.1-mini
+    begin_id = 0
+    end_id = 25
+    
+    # failed_id, passed_id = test_dataset(
+    #     model_name="gpt-4.1-mini",
+    #     begin_id=begin_id,
+    #     end_id=end_id,
+    #     logger=logger,
+    #     mask_id=None
+    # )
+    
+    # only run the failed ones with gpt-4.1, we get a smaller failed id set
+    passed_id = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+    failed_id2, passed_id2 = test_dataset(
+        model_name="gpt-4.1",
+        begin_id=begin_id,
+        end_id=end_id,
+        logger=logger,
+        mask_id=passed_id
     )
+    logger.info("--- Final Summary ---")
+    logger.info(f"Final PASSED ids: {sorted(passed_id2)}")
+    logger.info(f"Final FAILED ids: {sorted(failed_id2)}")
+    logger.info(f"Final passrate: {len(passed_id2) * 100 / (len(passed_id2) + len(failed_id2)):.3f}%")
+    
+    
+    
 
 if __name__ == "__main__":
     main()

@@ -7,6 +7,9 @@ def get_client(model_name: str) -> OpenAI:
     MODEL_TYPE_MAP = {
         # OPENAI series
         "gpt-4o": "openai",
+        "gpt-4.1": "openai",
+        "gpt-4.1-mini": "openai",
+        "gpt-4.1-nano": "openai",
         "gpt-4o-mini": "openai",
         "gpt-4o-2024-08-06": "openai",
         "gpt-4o-2024-11-20": "openai",
@@ -55,8 +58,8 @@ def get_client(model_name: str) -> OpenAI:
         return OpenAI(api_key=api_key, base_url="https://api.openai.com/v1")
     elif model_type == "deepseek":
         return OpenAI(
-            # base_url="https://api.deepseek.com/v1", api_key=os.getenv("DEEPSEEK_API_KEY")
-            base_url="https://api.deepseek.com/beta", api_key=os.getenv("DEEPSEEK_API_KEY")
+            base_url="https://api.deepseek.com/v1", api_key=os.getenv("DEEPSEEK_API_KEY")
+            # base_url="https://api.deepseek.com/beta", api_key=os.getenv("DEEPSEEK_API_KEY")
         )
     elif model_type == "siliconflow":
         api_key = os.getenv("SILICONFLOW_API_KEY")
@@ -97,3 +100,92 @@ def get_logger(log_level="INFO", log_file=None):
         level=log_level,
     )
     return logger
+
+# base class
+class Chat:
+    def __init__(self, client, model_name, system_prompt = "You are a helpful assistant.",allow_system_prompt=True):
+        self.client = client
+        self.model_name = model_name
+        self.messages = []
+        self.allow_system_prompt = allow_system_prompt
+        self.system_prompt = system_prompt
+        self.reset()
+        
+    # arbitrary chat
+    def chat(self, user_input=None):
+        if user_input is None:
+            user_input = input("User: \n")
+        self.messages.append({"role": "user", "content": user_input})
+        response = self.client.chat.completions.create(
+            model = self.model_name,
+            temperature = 0.0,
+            messages = self.messages,
+        )
+        rsp_content = response.choices[0].message.content
+        self.messages.append({"role": "assistant", "content": rsp_content})
+    
+    # 添加异步版本的chat方法
+    async def chat_async(self, user_input=None):
+        """异步版本的聊天方法"""
+        if user_input is None:
+            user_input = input("User: \n")
+        self.messages.append({"role": "user", "content": user_input})
+        
+        response = await self.client.chat.completions.create(
+            model=self.model_name,
+            temperature=0.0,
+            messages=self.messages,
+        )
+        rsp_content = response.choices[0].message.content
+        self.messages.append({"role": "assistant", "content": rsp_content})
+        return rsp_content
+    
+    # 替换原来的chat_async方法，改为使用线程池执行非阻塞操作
+    def chat_non_blocking(self, user_input=None, thread_executor=None):
+        """使用线程池执行非阻塞聊天操作"""
+        if user_input is None:
+            user_input = input("User: \n")
+        self.messages.append({"role": "user", "content": user_input})
+        
+        # 如果提供了线程执行器，使用它来异步执行API调用
+        if thread_executor:
+            future = thread_executor.submit(
+                self._make_api_call, 
+                self.model_name, 
+                self.messages
+            )
+            return future
+        else:
+            # 退化为同步调用
+            self._make_api_call(self.model_name, self.messages)
+            return None
+            
+    def _make_api_call(self, model_name, messages):
+        """实际执行API调用的内部方法"""
+        response = self.client.chat.completions.create(
+            model=model_name,
+            temperature=0.0,
+            messages=messages,
+        )
+        rsp_content = response.choices[0].message.content
+        self.messages.append({"role": "assistant", "content": rsp_content})
+        return rsp_content
+    
+    # clear the chat history
+    def reset(self):
+        self.messages = []
+        if self.allow_system_prompt:
+            self.messages.append(
+                {"role": "system", "content": self.system_prompt}
+            )
+            
+    # print all the chat history
+    def print_history(self):
+        logger.debug("-----Chat History-----")
+        for message in self.messages:
+            logger.debug(f"###{message['role']}: {message['content']}")
+        logger.debug("-----------------------")
+            
+    # get the last message
+    def get_response(self):
+        return self.messages[-1]['content']

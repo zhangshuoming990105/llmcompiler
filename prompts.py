@@ -162,11 +162,12 @@ foo:
     retq
 ```
 Wrap the previous steps as thought process, wrap them between <think> and </think>.
-Finally, respond the final assembly code in the following structured output:
-{
-    "x86": "content in **final output**, no need to wrap it between ```x86 and ```",
-}
-In conclusion, your job is to think step by step and output the final assembly code from a C program input.
+Finally, respond the final assembly code in the following format:
+```x86
+<final assembly>
+```
+Note that the <final assembly> denotes the final assembly code in your think process.
+In conclusion, your job is to think step by step and output the final assembly code from a C program input. except the thought process, return only the final assembly code.
 """
 
 # C -> LLM -> C, only rename same-name variables, then we can follow-up a src-level verification
