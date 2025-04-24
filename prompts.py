@@ -233,7 +233,79 @@ In conclusion, your job is to think step by step and output the final assembly c
 """
 
 
-lego_split_prompt = 'Extract the outermost control blocks from a lengthy C function and generate several code snippets based on the natural boundaries of control keywords, such as `for`, `while` loops, and `if-else` blocks. Return these extracted code snippets as a list of strings in their natural order in a JSON format.\n\n# Steps\n\n1. **Identify Outermost Control Blocks**: \n    - Focus on the outermost `for`, `while`, and `if-else` blocks of the C function.\n    - Ensure nested control blocks are part of their parent block, and do not split them separately.\n   \n2. **Extract Code Snippets**:\n    - For each identified outer block, extract the code starting from the control keyword up until the closing brace of that block.\n    - Maintain the order of these blocks as they appear in the function.\n\n3. **Prepare JSON Output**:\n    - Gather the extracted code snippets into a list of strings.\n    - Format the output in JSON, where each item in the list is a string representing one complete control block.\n\n# Output Format\n\nThe resulting output should be a JSON format, containing a list of strings. Each string should represent a full control block extracted from the C function, with a prefix of comment that indicates the order of appearance:\n\n```json\n{\n  "code_snippets": [\n    "/*block x*/string containing the first outermost control block",\n    "/*block y*/string containing the second outermost control block",\n    // More snippets...\n  ]\n}\n```\n\n# Examples\n\n## Input\n```c\n#include <stdio.h>\nint global_g = 10;\nvoid exampleFunction() {\n    int i = 0;\n    if (i < 10) {\n        printf("i is less than 10");\n    }\n    for (int j = 0; j < 5; j++) {\n        printf("j: %d", j);\n    }\n    while (i > 0) {\n        i--;\n    }\n    return;\n}\n```\n\n## Output\n```json\n{\n  "code_snippets": [\n    "/*Before function*/#include <stdio.h> int global_g = 10;",\n    "/*Function begin and Entryblock*/void exampleFunction() {\\n    int i = 0;",\n    "/*block1*/if (i < 10) { printf(\\"i is less than 10\\"); }",\n    "/*block2*/for (int j = 0; j < 5; j++) { printf(\\"j: %d\\", j); }",\n    "/*block3*/while (i > 0) { i--; }",\n    "/*block4*/return;\\n}",\n     "/*After function*/",\n  ]\n}\n```\n\n# Notes\n\n- Ensure that syntax errors in each block are minimized by maintaining the integrity of bracketed sections.\n- Assume well-formed input where braces are correctly balanced, and there\'s only one function body in the code(which you need to handle).\n- Function begin(function entry block) should be explicitly marked.\n- Outside of the function doesn\'t require handling, and respond them exactly the same in the code_snippets: before function appears first, after function appears last.\n- Make sure the sum of content in code_snippets is the same as the original function.'
+lego_split_prompt = """Extract the outermost control blocks from a lengthy C function and generate several code snippets based on the natural boundaries of control keywords, such as `for`, `while` loops, and `if-else` blocks. Return these extracted code snippets as a list of strings in their natural order in a JSON format.
+
+# Steps
+
+1. **Identify Outermost Control Blocks**: 
+    - Focus on the outermost `for`, `while`, and `if-else` blocks of the C function.
+    - Ensure nested control blocks are part of their parent block, and do not split them separately.
+   
+2. **Extract Code Snippets**:
+    - For each identified outer block, extract the code starting from the control keyword up until the closing brace of that block.
+    - Maintain the order of these blocks as they appear in the function.
+
+3. **Prepare JSON Output**:
+    - Gather the extracted code snippets into a list of strings.
+    - Format the output in JSON, where each item in the list is a string representing one complete control block.
+
+# Output Format
+
+The resulting output should be a JSON format, containing a list of strings. Each string should represent a full control block extracted from the C function, with a prefix of comment that indicates the order of appearance:
+
+```json
+{
+  "code_snippets": [
+    "/*block x*/string containing the first outermost control block",
+    "/*block y*/string containing the second outermost control block",
+    // More snippets...
+  ]
+}
+```
+
+# Examples
+
+## Input
+```c
+#include <stdio.h>
+int global_g = 10;
+void exampleFunction() {
+    int i = 0;
+    if (i < 10) {
+        printf("i is less than 10");
+    }
+    for (int j = 0; j < 5; j++) {
+        printf("j: %d", j);
+    }
+    while (i > 0) {
+        i--;
+    }
+    return;
+}
+```
+
+## Output
+```json
+{
+  "code_snippets": [
+    "/*Before function*/#include <stdio.h> int global_g = 10;",
+    "/*Function begin and Entryblock*/void exampleFunction() {\n    int i = 0;",
+    "/*block1*/if (i < 10) { printf(\"i is less than 10\"); }",
+    "/*block2*/for (int j = 0; j < 5; j++) { printf(\"j: %d\", j); }",
+    "/*block3*/while (i > 0) { i--; }",
+    "/*block4*/return;\n}",
+     "/*After function*/",
+  ]
+}
+```
+
+# Notes
+
+- Ensure that syntax errors in each block are minimized by maintaining the integrity of bracketed sections.
+- Assume well-formed input where braces are correctly balanced, and there's only one function body in the code(which you need to handle).
+- Function begin(function entry block) should be explicitly marked.
+- Outside of the function doesn't require handling, and respond them exactly the same in the code_snippets: before function appears first, after function appears last.
+- Make sure the sum of content in code_snippets is the same as the original function."""
 
 
 # C -> LLM -> C, only rename same-name variables, then we can follow-up a src-level verification

@@ -55,6 +55,7 @@ def query_model(
 def split_function_into_cbs(
     client: OpenAI, model_name: str, c_code: str, temperature: float = 0.0
 ):
+    """Split C code into control blocks using the model."""
     response = client.chat.completions.create(
         model=model_name,
         messages=[
