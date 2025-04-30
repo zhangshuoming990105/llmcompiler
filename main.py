@@ -103,6 +103,14 @@ def split_function_into_cbs(
     code_snippets: list = parsed_response["code_snippets"]
     return code_snippets
 
+def construct_prompt(prompt, c_code):
+    messages = [
+        {"role": "system", "content": prompt},
+        {"role": "user", "content": c_code},
+    ]
+    return messages
+
+
 
 def process_item(
     case_id,
@@ -266,15 +274,19 @@ def process_item(
             failed_id.append(case_id)
             return
         logger.debug(f"Case {case_id}: Preparing request for model {model_name}")
-        system_prompt = (
-            x86_compile_prompt_simple
-            if prompt_style == "simple"
-            else x86_compile_prompt
+        # system_prompt = (
+        #     x86_compile_prompt_simple
+        #     if prompt_style == "simple"
+        #     else x86_compile_prompt
+        # )
+        # messages = [
+        #     {"role": "system", "content": system_prompt},
+        #     {"role": "user", "content": c_code},
+        # ]
+        messages = construct_prompt(
+            x86_compile_prompt_simple if prompt_style == "simple" else x86_compile_prompt,
+            c_code,
         )
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": c_code},
-        ]
         x86_asm = None
         try:
             logger.info(f"Case {case_id}: Sending request to {model_name}...")
@@ -496,10 +508,11 @@ def test_dataset(
     prompt_style="simple",
     log_name=None,
     temperature=0.0,
+    max_concurrent=2,
 ):
 
-    # dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
-    dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
+    dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
+    # dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
     ds = load_dataset(dataset_name)["train"]
     logger.info(f"Loaded dataset {dataset_name} with {len(ds)} samples.")
     tmp_dir = "sandbox/tmp"
@@ -515,7 +528,6 @@ def test_dataset(
     passed_id = []
     failed_id = []
 
-    max_concurrent = 100
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_concurrent) as executor:
         futures = []
         for case_id, data in enumerate(ds):
@@ -571,14 +583,16 @@ def test_dataset(
 
 def main():
     # model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
-    model_name = "gpt-4.1-mini"
+    model_name = "deepseek-chat"
     need_log = True
     prompt_style = "simple"  # "simple" or "full"
     # first test with gpt-4.1-mini
     begin_id = 0
-    end_id = 1996
+    end_id = 17121
+    max_concurrent = 2
     use_mask = False
     mask_csv_file = None
+    # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_1996_20250424_110927.csv"
     failed_id = []
 
     if not need_log:
@@ -617,12 +631,14 @@ def main():
                 f"Mask CSV file path not provided or file does not exist. Proceeding without mask."
             )
             failed_id = []
+        if use_mask:
+            mask_id = [i for i in range(begin_id, end_id) if i not in failed_id]
+        else:
+            mask_id = None
 
-        mask_id = failed_id  # Use the loaded IDs as the mask
         logger.info(
-            f"Using IDs from {mask_csv_file} as mask (skipping these IDs): {mask_id}"
+            f"Using !IDs from {mask_csv_file} as mask (skipping these IDs): {mask_id}"
         )
-        # load csv file # TBD -> Implemented above
 
     else:
         mask_id = None
@@ -634,6 +650,7 @@ def main():
         mask_id=mask_id,
         prompt_style=prompt_style,
         log_name=log_name,
+        max_concurrent=max_concurrent,
     )
     logger.info("--- Final Summary ---")
     logger.info(f"Final PASSED ids: {sorted(passed_id2)}")
