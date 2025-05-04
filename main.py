@@ -583,15 +583,16 @@ def test_dataset(
 
 def main():
     # model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
-    model_name = "deepseek-chat"
+    # model_name = "deepseek-chat"
+    model_name = "gpt-4.1-mini"
     need_log = True
     prompt_style = "simple"  # "simple" or "full"
     # first test with gpt-4.1-mini
     begin_id = 0
     end_id = 17121
-    max_concurrent = 2
-    use_mask = False
-    mask_csv_file = None
+    max_concurrent = 25
+    use_mask = True
+    mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_17121_20250427_140707.csv"
     # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_1996_20250424_110927.csv"
     failed_id = []
 
