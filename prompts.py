@@ -20,7 +20,7 @@ float foo(int i, int j, int arr[]) {
 }
 ```
 Example Output, below is the things you need to generate:
-```x86
+```asm
     .text
     .globl  foo
 foo:
@@ -182,7 +182,7 @@ i_1: int, size 4, align 4, (-24, -28], -28(%rbp)
 j_1: int, size 4, align 4, (-28, -32], -32(%rbp)
 ```
 **final output**:
-```x86
+```asm
     .text
     .globl  foo
 foo:
@@ -225,13 +225,199 @@ foo:
 ```
 Wrap the previous steps as thought process, wrap them between <think> and </think>.
 Finally, respond the final assembly code in the following format:
-```x86
+```asm
 <final assembly>
 ```
 Note that the <final assembly> denotes the final assembly code in your think process.
 In conclusion, your job is to think step by step and output the final assembly code from a C program input. except the thought process, return only the final assembly code.
 """
 
+arm_compile_prompt = """you are a helpful assistant in compilation.
+Translate a C program into ARM64 assembly code following specific guidelines.
+
+Ensure no optimization is performed during translation. Pay careful attention to register usage and instruction formatting, and manage the memory stack meticulously. The target platform is ARMv8-A.
+
+# Steps
+
+1. **Parsing the C Program**: Analyze the C program to understand its structure and identify the data types, control flow, and functions used.
+   
+2. **Map C Constructs to ARM64 Instructions**: Translate C constructs, such as loops and conditionals, into their corresponding ARM64 assembly instructions. Pay special attention to:
+   - Register allocation, ensuring efficient usage without conflicts, insert necessary load/store if needed.
+   - Instruction formats and addressing modes specific to ARM64. Note that ARM64 gives every function with a '_' prefix. therefore main becomes _main, be careful.
+
+3. **Memory Management**:
+   - Allocate stack memory for local variables and function call management.
+   - Implement stack frames correctly for function calls and returns.
+   - Maintain alignment and order for data access efficiency.
+
+4. **No Optimization**: Translate the C code as literally as possible from a functional standpoint, avoiding any optimization techniques that might alter the program's behavior or efficiency.
+
+5. **Write Sufficient Comment**: Align the original C code with the generated assembly code, providing comments that explain the purpose of each section and instruction.
+
+# Output Format
+
+The program should be output as ARM64 assembly code, written in a clear and readable format with appropriate comments for each section and instruction.
+
+Example:
+Input program as follows:
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 0;
+    for (i = 0; i < 10; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+```
+Generated assembly code should be:
+```asm
+	.text
+	.global _main
+	.p2align 2
+_main:
+    // Prologue
+    stp x29, x30, [sp, #-16]!	// push FP, LR
+    mov x29, sp
+
+    // Allocate space for i
+    sub sp, sp, #16             // stack: 16-byte aligned, i at [sp]
+
+str wzr, [sp]					// i = 0
+
+loop_cond:
+    ldr w0, [sp]
+    cmp w0, #10
+    bge loop_end
+	b loop_body
+
+loop_body:
+    // Call printf("%d\n", i)
+    ldr w1, [sp]            	// load i into x1
+    adrp x0, fmt_str@PAGE
+    add x0, x0, fmt_str@PAGEOFF	// x0 = address of "%d\n"
+    bl _printf 					// call printf(x0=format, x1=i)
+
+    // i++
+    ldr w0, [sp]
+    add w0, w0, #1
+    str w0, [sp]
+
+    b loop_cond
+
+loop_end:
+    mov w0, #0					// return 0
+
+    // Epilogue
+    add sp, sp, #16
+    ldp x29, x30, [sp], #16		// pop FP, LR
+    ret
+
+	.text
+fmt_str: .asciz "%d\n"
+```
+Return the assembly wrapped between ```asm and ``` only, and do not include any other text.
+"""
+
+riscv_compile_prompt = """you are a helpful assistant in compilation.
+you will act like a compiler to compile a C program into corresponding assembly code.
+you will not response any other information.
+
+Translate a C program into RISCV64 assembly code following specific guidelines, the target platform is RISC-V RV64GC.
+
+Ensure no optimization is performed during translation. Pay careful attention to register usage and instruction formatting, and manage the memory stack meticulously.
+
+# Steps
+
+1. **Parsing the C Program**: Analyze the C program to understand its structure and identify the data types, control flow, and functions used.
+   
+2. **Map C Constructs to RISCV Instructions**: Translate C constructs, such as loops and conditionals, into their corresponding RISCV64 assembly instructions. Pay special attention to:
+   - Register allocation, ensuring efficient usage without conflicts, insert necessary load/store if needed.
+   - Instruction formats and addressing modes specific to RISCV.
+
+3. **Memory Management**:
+   - Allocate stack memory for local variables and function call management.
+   - Implement stack frames correctly for function calls and returns.
+   - Maintain alignment and order for data access efficiency.
+
+4. **No Optimization**: Translate the C code as literally as possible from a functional standpoint, avoiding any optimization techniques that might alter the program's behavior or efficiency.
+
+5. **Write Sufficient Comment**: Align the original C code with the generated assembly code, providing comments that explain the purpose of each section and instruction.
+
+# Output Format
+
+The program should be output as RISCV64 assembly code, written in a clear and readable format with appropriate comments for each section and instruction.
+
+Example:
+Input program as follows:
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 0;
+    for (i = 0; i < 10; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+```
+Generated assembly code should be:
+```asm
+	.option nopic
+	.attribute arch, "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0"
+	.attribute unaligned_access, 0
+	.attribute stack_align, 16
+	.text
+	.align	1
+	.globl	main
+	.type	main, @function
+main:
+	# Prologue
+	addi	sp,sp,-32 # Allocate stack space
+	# Save ra and s0
+	sd	ra,24(sp)
+	sd	s0,16(sp)
+	# set new stack pointer
+	addi	s0,sp,32
+	sw	zero,-20(s0) # i = 0
+	j	.Lcond	
+.Lbody:
+	lw	a5,-20(s0)
+	mv	a1,a5	# second argument, i
+	lui	a5,%hi(.format_str)
+	addi	a0,a5,%lo(.format_str)	# load first argument, format string
+	call	printf	# printf("%d\n", i)
+	lw	a5,-20(s0)
+	addiw	a5,a5,1 # i++
+	sw	a5,-20(s0)	
+.Lcond:
+	lw	a5,-20(s0)
+	sext.w	a4,a5
+	li	a5,9
+	ble	a4,a5,.Lbody	# if i <= 9
+	j	.Lexit
+.Lexit:
+	# Exit the program
+	li	a0, 0
+	# Epilogue
+	# Restore ra and s0
+	ld	ra,24(sp)
+	ld	s0,16(sp)
+	# Deallocate stack space
+	addi	sp,sp,32
+	# Return
+	jr	ra
+
+	.text
+	.section	.rodata
+	.align	3
+.format_str:
+	.string	"%d\n"
+
+```
+Return the assembly wrapped between ```asm and ``` only, and do not include any other text.
+"""
 
 lego_split_prompt = """Extract the outermost control blocks from a lengthy C function and generate several code snippets based on the natural boundaries of control keywords, such as `for`, `while` loops, and `if-else` blocks. Return these extracted code snippets as a list of strings in their natural order in a JSON format.
 

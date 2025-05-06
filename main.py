@@ -244,7 +244,16 @@ def process_item(
             failed_id.append(case_id)
             return
         driver_asm_path = os.path.join(base_dir, f"tmp_driver_{case_id}.s")
-        compile_cmd = ["g++", "-S", driver_cpp_path, "-o", driver_asm_path]
+        if prompt_style == "riscv_simple":
+            compile_cmd = [
+                "riscv64-unknown-elf-g++",
+                "-S",
+                driver_cpp_path,
+                "-o",
+                driver_asm_path,
+            ]
+        else:
+            compile_cmd = ["g++", "-S", driver_cpp_path, "-o", driver_asm_path]
         logger.debug(f"Case {case_id}: Compiling driver code: {' '.join(compile_cmd)}")
         try:
             ret = subprocess.run(
@@ -283,10 +292,23 @@ def process_item(
         #     {"role": "system", "content": system_prompt},
         #     {"role": "user", "content": c_code},
         # ]
-        messages = construct_prompt(
-            x86_compile_prompt_simple if prompt_style == "simple" else x86_compile_prompt,
-            c_code,
-        )
+        if prompt_style == "simple":
+            messages = construct_prompt(
+                x86_compile_prompt_simple, c_code
+            )
+        elif prompt_style == "arm_simple":
+            messages = construct_prompt(
+                arm_compile_prompt, c_code
+            )
+        elif prompt_style == "riscv_simple":
+            messages = construct_prompt(
+                riscv_compile_prompt, c_code
+            )
+        else:
+            messages = construct_prompt(
+                x86_compile_prompt_simple if prompt_style == "simple" else x86_compile_prompt,
+                c_code,
+            )
         x86_asm = None
         try:
             logger.info(f"Case {case_id}: Sending request to {model_name}...")
@@ -309,18 +331,18 @@ def process_item(
                     response_content = response.split("</think>")[-1].strip()
                 else:
                     response_content = response
-                # get asm from response_content, between '```x86' and '```'
-                if "```x86" in response_content:
+                # get asm from response_content, between '```asm' and '```'
+                if "```asm" in response_content:
                     x86_asm = (
-                        response_content.split("```x86")[-1].split("```")[0].strip()
+                        response_content.split("```asm")[-1].split("```")[0].strip()
                     )
                     logger.info(f"Case {case_id}: C source code:\n{c_code}")
-                    logger.info(
-                        f"Case {case_id}: Extracted x86 assembly:\n{x86_asm}"
+                    logger.debug(
+                        f"Case {case_id}: Extracted assembly:\n{x86_asm}"
                     )  # DEBUG
                 else:
                     logger.warning(
-                        f"Case {case_id}: No x86 assembly found in response. Using raw response."
+                        f"Case {case_id}: No assembly found in response. Using raw response."
                     )
                     x86_asm = response_content
             except Exception as e:
@@ -351,7 +373,17 @@ def process_item(
             failed_id.append(case_id)
             return
         executable_path = os.path.join(base_dir, f"tmp_{case_id}")
-        compile_cmd = ["g++", out_asm_path, driver_asm_path, "-o", executable_path]
+        # for riscv64, use riscv64-unknown-elf-*
+        if prompt_style == "riscv_simple":
+            compile_cmd = [
+                "riscv64-unknown-elf-g++",
+                out_asm_path,
+                driver_asm_path,
+                "-o",
+                executable_path,
+            ]
+        else:
+            compile_cmd = ["g++", out_asm_path, driver_asm_path, "-o", executable_path]
         logger.debug(
             f"Case {case_id}: Compiling final executable: {' '.join(compile_cmd)}"
         )
@@ -413,7 +445,16 @@ def process_item(
             input_json_path = os.path.join(input_dir, f"in{j}.json")
             output_json_path = os.path.join(output_dir, f"out{j}.json")
             real_output_json_path = os.path.join(output_dir, f"out{j}_real.json")
-            exec_cmd = [executable_path, input_json_path, real_output_json_path]
+            if prompt_style == "riscv_simple":
+                exec_cmd = [
+                    "spike",
+                    "pk",
+                    executable_path,
+                    input_json_path,
+                    real_output_json_path,
+                ]
+            else:
+                exec_cmd = [executable_path, input_json_path, real_output_json_path]
             logger.debug(f"Case {case_id}, Input {j}: Executing: {' '.join(exec_cmd)}")
             try:
                 ret = subprocess.run(
@@ -511,8 +552,8 @@ def test_dataset(
     max_concurrent=2,
 ):
 
-    dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
-    # dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
+    # dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
+    dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
     ds = load_dataset(dataset_name)["train"]
     logger.info(f"Loaded dataset {dataset_name} with {len(ds)} samples.")
     tmp_dir = "sandbox/tmp"
@@ -584,15 +625,18 @@ def test_dataset(
 def main():
     # model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
     # model_name = "deepseek-chat"
-    model_name = "gpt-4.1-mini"
+    model_name = "gpt-4.1"
     need_log = True
-    prompt_style = "simple"  # "simple" or "full"
+    # prompt_style = "arm_simple"  # "simple" or "full"
+    prompt_style ="simple"  # "simple" or "full"
     # first test with gpt-4.1-mini
     begin_id = 0
-    end_id = 17121
+    # end_id = 17121
+    end_id = 1
     max_concurrent = 25
-    use_mask = True
-    mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_17121_20250427_140707.csv"
+    use_mask = False
+    mask_csv_file = None
+    # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_17121_20250427_140707.csv"
     # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_1996_20250424_110927.csv"
     failed_id = []
 
