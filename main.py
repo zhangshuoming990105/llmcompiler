@@ -523,6 +523,7 @@ def process_item(
                 f"Case {case_id}: PASSED ({local_succ}/{input_count} inputs correct)."
             )
             passed_id.append(case_id)
+            logger.info(f"Passed assembly code {case_id}:\n{x86_asm}")
         else:
             logger.info(
                 f"Case {case_id}: FAILED ({local_err}/{input_count} inputs failed or errored)."
@@ -552,8 +553,8 @@ def test_dataset(
     max_concurrent=2,
 ):
 
-    # dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
-    dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
+    dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
+    # dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
     ds = load_dataset(dataset_name)["train"]
     logger.info(f"Loaded dataset {dataset_name} with {len(ds)} samples.")
     tmp_dir = "sandbox/tmp"
@@ -624,16 +625,16 @@ def test_dataset(
 
 def main():
     # model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
-    # model_name = "deepseek-chat"
-    model_name = "gpt-4.1"
+    model_name = "deepseek-chat"
+    # model_name = "gpt-4.1"
     need_log = True
     # prompt_style = "arm_simple"  # "simple" or "full"
-    prompt_style ="simple"  # "simple" or "full"
+    prompt_style ="arm_simple"  # "simple" or "full"
     # first test with gpt-4.1-mini
     begin_id = 0
     # end_id = 17121
-    end_id = 1
-    max_concurrent = 25
+    end_id = 500
+    max_concurrent = 2
     use_mask = False
     mask_csv_file = None
     # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_17121_20250427_140707.csv"
