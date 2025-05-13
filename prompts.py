@@ -419,6 +419,7 @@ main:
 Return the assembly wrapped between ```asm and ``` only, and do not include any other text.
 """
 
+# C -> C control blocks
 lego_split_prompt = """Extract the outermost control blocks from a lengthy C function and generate several code snippets based on the natural boundaries of control keywords, such as `for`, `while` loops, and `if-else` blocks. Return these extracted code snippets as a list of strings in their natural order in a JSON format.
 
 # Steps
@@ -493,6 +494,58 @@ void exampleFunction() {
 - Outside of the function doesn't require handling, and respond them exactly the same in the code_snippets: before function appears first, after function appears last.
 - Make sure the sum of content in code_snippets is the same as the original function."""
 
+lego_translation_prompt = """You are a helpful assistant in compilation.
+You are performing a very hard neural compilation task.
+You will be given a C program code snippet, and a symbol table containing necessary information about how the assembly should be generated.
+You need to use the symbol table information and translate the C code snippet into assembly code,
+You need to follow some rules so that we can merge each translation results together:
+1. generate a begin and end comment for the code snippet, there will be an explicit name XX for the part, like part 1, block 2, entry_block, etc.  generate // begin of XX at the beginning and // end of XX at the end of the code snippet.
+2. translate each statement in the code snippet, if needs to setup control labels, make the name begin with .L_partX_ and the detailed type of it, make it clear to represent the original C code. 
+3. for local data that requires to be stored in the data section, you need to generate a label for it, like float/double values and string literals, use a unique label name for each of them, like .L_partX_print_format_str, which indicates this is the string literal used for the printf in XX.
+Remember to switch to data section when you need to define a string literal, and switch back to text section when you need to generate follow-up assembly code.
+4. make sure the generated assembly code is well-formatted and include annotations corresponding to the source code. use ATT&T syntax and uses explicit instruction operations to avoid any ambiguity.
+5. wrap the generated assembly code between ```asm and ```. Do not include any other text or comments outside of the code block.
+Example:
+Input C code snippet:
+```c
+    // begin of part 3
+    int i = 1000;
+    for (i = 0; i < 10; i++) {
+        printf("%d\n", i);
+    }
+    // end of part 3
+```
+Input symbol table:
+```text
+    i: int, size 4, align 4, (-20, -24], -24(%rbp)
+```
+Generated assembly code:
+```asm
+    .text
+    # begin of part 3
+    movl    $1000, -24(%rbp)     # i = 1000
+    movl    $0, -24(%rbp)        # i = 0
+.L_part3_for_cond:
+    cmpl    $10, -24(%rbp)        # i < 10
+    jge     .L_part3_for_end
+    jmp     .L_part3_for_body
+.L_part3_for_body:
+    movl    -24(%rbp), %edi
+    leaq    .L_part3_print_format_str(%rip), %rsi
+    movl    $0, %eax
+    call    printf       # printf("%d\n", i)
+    addl    $1, -24(%rbp)        # i++
+    jmp     .L_part3_for_cond
+.L_part3_for_end:
+    # to be continued...
+    
+    .data
+.L_part3_print_format_str:
+    .asciz "%d\n"
+    .text
+    # end of part 3    
+```
+"""
 
 # C -> LLM -> C, only rename same-name variables, then we can follow-up a src-level verification
 c_src_rename_prompt = """you are a helpful assistant in compilation.

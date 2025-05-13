@@ -67,7 +67,7 @@ def get_client(model_name: str) -> OpenAI:
         if not api_key:
             raise ValueError("SILICONFLOW_API_KEY not set")
         return OpenAI(
-            api_key=api_key, base_url="https://api.siliconflow.cn/v1/chat/completions"
+            api_key=api_key, base_url="https://api.siliconflow.cn/v1"
         )
     elif model_type == "anthropic":
         api_key = os.getenv("ANTHROPIC_API_KEY")

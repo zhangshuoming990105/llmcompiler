@@ -46,7 +46,7 @@ def query_model(
         temperature=temperature,
         messages=messages,
         timeout=300,
-        frequency_penalty=0.01,
+        # frequency_penalty=0.01,
     )
     response = completion.choices[0].message.content
     return response
@@ -93,8 +93,8 @@ def split_function_into_cbs(
         temperature=0,
         max_completion_tokens=4096,
         top_p=1,
-        frequency_penalty=0,
-        presence_penalty=0,
+        # frequency_penalty=0,
+        # presence_penalty=0,
         store=False,
     )
     # parse the response as json
@@ -110,7 +110,14 @@ def construct_prompt(prompt, c_code):
     ]
     return messages
 
-
+# LEGO translation
+"""workflow:
+1. first perform similar workflow to get a symbol tabele
+2. analyze program, split program into control blocks
+3. feed LLM with each control block and the global symbol table, get the assembly code in each block
+4. concatenate the assembly code together
+5. fix trivial errors that may caused by the split/merge process
+"""
 
 def process_item(
     case_id,
@@ -318,7 +325,7 @@ def process_item(
                 temperature=temperature,
                 messages=messages,
                 timeout=300,
-                frequency_penalty=0.01,
+                # frequency_penalty=0.01,
             )
             response = completion.choices[0].message.content
 
@@ -625,20 +632,37 @@ def test_dataset(
 
 def main():
     # model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
-    model_name = "deepseek-chat"
-    # model_name = "gpt-4.1"
+    # model_name = "deepseek-chat"
+    # model_name = "gemini-2.5-flash-preview-04-17"
+    model_name = "gemini-2.5-pro-preview-05-06"
+    # model_name = "claude-3-5-haiku-20241022"
+    # model_name = "claude-3-7-sonnet-20250219"
+    # model_name = "gemini-2.0-flash"
     need_log = True
     # prompt_style = "arm_simple"  # "simple" or "full"
-    prompt_style ="arm_simple"  # "simple" or "full"
+    prompt_style ="full"  # "simple" or "full"
     # first test with gpt-4.1-mini
     begin_id = 0
+    end_id = 2000
     # end_id = 17121
-    end_id = 500
-    max_concurrent = 2
-    use_mask = False
-    mask_csv_file = None
+    # end_id = 1996
+    max_concurrent = 10
+    # use_mask = False
+    # mask_csv_file = None
+    use_mask = True
+    mask_csv_file = "masks/failed_ids_gemini-2.5-pro-preview-05-06_simple_0_2000_20250512_104110.csv"
+    # mask_csv_file = "masks/failed_ids_claude37_temp.csv"
+    # mask_csv_file = "masks/failed_ids_claude-3-7-sonnet-20250219_simple_0_2000_20250512_083628.csv"
+    # mask_csv_file = "masks/failed_ids_gemini-2.0-flash_simple_0_2000_20250512_072919.csv"
+    # mask_csv_file = "masks/failed_ids_gpt-4.1_simple_0_2000_20250512_065345.csv"
+    # mask_csv_file = "masks/failed_ids_gpt-4.1-mini_simple_0_2000_20250512_055513.csv"
+    # mask_csv_file = "masks/failed_ids_claude-3-7-sonnet-20250219_simple_0_1996_20250508_112143.csv"
+    # mask_csv_file = "masks/failed_ids_claude-3-5-haiku-20241022_simple_0_1996_20250508_090403.csv"
+    # mask_csv_file = "masks/failed_ids_gemini-2.5-pro-preview-05-06_simple_0_1996_20250507_100341.csv"
+    # mask_csv_file = "masks/failed_ids_gemini-2.5-flash-preview-04-17_simple_0_1996_20250507_084725.csv"
     # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_17121_20250427_140707.csv"
     # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_1996_20250424_110927.csv"
+    
     failed_id = []
 
     if not need_log:
