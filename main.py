@@ -560,8 +560,8 @@ def test_dataset(
     max_concurrent=2,
 ):
 
-    dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
-    # dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
+    # dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
+    dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
     ds = load_dataset(dataset_name)["train"]
     logger.info(f"Loaded dataset {dataset_name} with {len(ds)} samples.")
     tmp_dir = "sandbox/tmp"
@@ -633,24 +633,25 @@ def test_dataset(
 def main():
     # model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
     # model_name = "deepseek-chat"
-    # model_name = "gemini-2.5-flash-preview-04-17"
-    model_name = "gemini-2.5-pro-preview-05-06"
+    model_name = "gemini-2.5-flash-preview-04-17"
+    # model_name = "gemini-2.5-pro-preview-05-06"
     # model_name = "claude-3-5-haiku-20241022"
     # model_name = "claude-3-7-sonnet-20250219"
     # model_name = "gemini-2.0-flash"
     need_log = True
     # prompt_style = "arm_simple"  # "simple" or "full"
-    prompt_style ="full"  # "simple" or "full"
+    prompt_style ="riscv_simple"  # "simple" or "full"
     # first test with gpt-4.1-mini
     begin_id = 0
-    end_id = 2000
+    # end_id = 2000
     # end_id = 17121
-    # end_id = 1996
-    max_concurrent = 10
-    # use_mask = False
-    # mask_csv_file = None
-    use_mask = True
-    mask_csv_file = "masks/failed_ids_gemini-2.5-pro-preview-05-06_simple_0_2000_20250512_104110.csv"
+    end_id = 994 # 1996
+    max_concurrent = 4
+    use_mask = False
+    mask_csv_file = None
+    # use_mask = True
+    # mask_csv_file = "masks/failed_ids_gemini-2.5-pro-preview-05-06_arm_simple_0_994_20250513_150424.csv"
+    # mask_csv_file = "masks/failed_ids_gemini-2.5-pro-preview-05-06_simple_0_2000_20250512_104110.csv"
     # mask_csv_file = "masks/failed_ids_claude37_temp.csv"
     # mask_csv_file = "masks/failed_ids_claude-3-7-sonnet-20250219_simple_0_2000_20250512_083628.csv"
     # mask_csv_file = "masks/failed_ids_gemini-2.0-flash_simple_0_2000_20250512_072919.csv"
