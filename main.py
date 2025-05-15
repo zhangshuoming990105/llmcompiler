@@ -623,16 +623,16 @@ def main():
     
     parser.add_argument('--dataset', type=str, default="mistral0105/exebench_io_hard2_full_cleaned",
                         help='Datasets options: mistral0105/exebench_io_validated_full_cleaned(17121) or mistral0105/exebench_io_hard2_full_cleaned (1996)')
-    parser.add_argument('--model', type=str, default="gemini-2.5-flash-preview-04-17",
+    parser.add_argument('--model', type=str, default="gpt-4.1",
                         help='Model options')
     parser.add_argument('--prompt-style', type=str, default="arm_simple",
                         choices=["simple", "full", "arm_simple", "riscv_simple"],
                         help='translation style')
     parser.add_argument('--begin-id', type=int, default=0,
                         help='begin ID')
-    parser.add_argument('--end-id', type=int, default=994,
+    parser.add_argument('--end-id', type=int, default=10,
                         help='end ID (exclusive)')
-    parser.add_argument('--max-concurrent', type=int, default=4,
+    parser.add_argument('--max-concurrent', type=int, default=1,
                         help='max concurrent tasks')
     parser.add_argument('--temperature', type=float, default=0.0,
                         help='temperature for sampling')
@@ -660,6 +660,7 @@ def main():
 
     if not need_log:
         logger = get_logger("INFO")
+        log_name = NotImplementedError
     else:
         log_dir = "logs"
 
