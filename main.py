@@ -8,6 +8,7 @@ import concurrent.futures
 import tempfile
 import asyncio
 import csv
+import argparse
 from openai import OpenAI, AsyncOpenAI
 from datetime import datetime
 
@@ -132,8 +133,6 @@ def process_item(
     prompt_style="simple",
     temperature=0.0,
 ):
-    # global x86_compile_prompt, x86_compile_prompt_simple
-    # global logger
     logger.info(f"--- Processing case {case_id} ---")
     try:
         id = 0
@@ -290,15 +289,6 @@ def process_item(
             failed_id.append(case_id)
             return
         logger.debug(f"Case {case_id}: Preparing request for model {model_name}")
-        # system_prompt = (
-        #     x86_compile_prompt_simple
-        #     if prompt_style == "simple"
-        #     else x86_compile_prompt
-        # )
-        # messages = [
-        #     {"role": "system", "content": system_prompt},
-        #     {"role": "user", "content": c_code},
-        # ]
         if prompt_style == "simple":
             messages = construct_prompt(
                 x86_compile_prompt_simple, c_code
@@ -549,16 +539,16 @@ def process_item(
 
 
 def test_dataset(
-    dataset_name="mistral0105/exebench_io_hard2_full_cleaned",  # 1996
-    model_name="deepseek-chat",
+    dataset_name="mistral0105/exebench_io_hard2_full_cleaned",
+    model_name="gemini-2.5-flash-preview-04-17",
     begin_id=0,
-    end_id=10,
+    end_id=994,
     logger=None,
     mask_id=None,
-    prompt_style="simple",
+    prompt_style="arm_simple",
     log_name=None,
     temperature=0.0,
-    max_concurrent=2,
+    max_concurrent=4,
 ):
     ds = load_dataset(dataset_name)["train"]
     logger.info(f"Loaded dataset {dataset_name} with {len(ds)} samples.")
@@ -629,23 +619,42 @@ def test_dataset(
 
 
 def main():
-    # dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
-    dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
+    parser = argparse.ArgumentParser(description='LLM-as-compiler test, LEGO translation will be available soon')
     
-    # model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
-    # model_name = "deepseek-chat"
-    model_name = "gemini-2.5-flash-preview-04-17"
-    # model_name = "gemini-2.5-pro-preview-05-06"
-    # model_name = "claude-3-5-haiku-20241022"
-    # model_name = "claude-3-7-sonnet-20250219"
-    # model_name = "gemini-2.0-flash"
-    need_log = True
-    prompt_style = "arm_simple"  # "simple" or "full" or 'arm_simple' or 'riscv_simple'
-    begin_id = 0
-    end_id = 994 # for hard ds, 1996; for full ds, 17121
-    max_concurrent = 4 # varying for different models and your api tier;
-    use_mask = False
-    mask_csv_file = None
+    parser.add_argument('--dataset', type=str, default="mistral0105/exebench_io_hard2_full_cleaned",
+                        help='Datasets options: mistral0105/exebench_io_validated_full_cleaned(17121) or mistral0105/exebench_io_hard2_full_cleaned (1996)')
+    parser.add_argument('--model', type=str, default="gemini-2.5-flash-preview-04-17",
+                        help='Model options')
+    parser.add_argument('--prompt-style', type=str, default="arm_simple",
+                        choices=["simple", "full", "arm_simple", "riscv_simple"],
+                        help='translation style')
+    parser.add_argument('--begin-id', type=int, default=0,
+                        help='begin ID')
+    parser.add_argument('--end-id', type=int, default=994,
+                        help='end ID (exclusive)')
+    parser.add_argument('--max-concurrent', type=int, default=4,
+                        help='max concurrent tasks')
+    parser.add_argument('--temperature', type=float, default=0.0,
+                        help='temperature for sampling')
+    parser.add_argument('--no-log', action='store_true',
+                        help='no log to file')
+    parser.add_argument('--use-mask', action='store_true',
+                        help='use mask file to skip certain IDs, can be helpful to skip already passed IDs')
+    parser.add_argument('--mask-file', type=str, default=None,
+                        help='mask file path, if use --use-mask, this file should be provided')
+    
+    args = parser.parse_args()
+    
+    dataset_name = args.dataset
+    model_name = args.model
+    prompt_style = args.prompt_style
+    begin_id = args.begin_id
+    end_id = args.end_id
+    max_concurrent = args.max_concurrent
+    temperature = args.temperature
+    need_log = not args.no_log
+    use_mask = args.use_mask
+    mask_csv_file = args.mask_file
     
     failed_id = []
 
@@ -706,14 +715,11 @@ def main():
         prompt_style=prompt_style,
         log_name=log_name,
         max_concurrent=max_concurrent,
+        temperature=temperature,
     )
     logger.info("--- Final Summary ---")
     logger.info(f"Final PASSED ids: {sorted(passed_id2)}")
     logger.info(f"Final FAILED ids: {sorted(failed_id2)}")
-    # save to a new csv file with the log_name
-    # save like this:
-    # fid1, fid2, fid3...
-    # TBD -> Implemented below
     if need_log and log_name:
         mask_output_dir = "masks"
         os.makedirs(mask_output_dir, exist_ok=True)
