@@ -549,6 +549,7 @@ def process_item(
 
 
 def test_dataset(
+    dataset_name="mistral0105/exebench_io_hard2_full_cleaned",  # 1996
     model_name="deepseek-chat",
     begin_id=0,
     end_id=10,
@@ -559,9 +560,6 @@ def test_dataset(
     temperature=0.0,
     max_concurrent=2,
 ):
-
-    # dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
-    dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
     ds = load_dataset(dataset_name)["train"]
     logger.info(f"Loaded dataset {dataset_name} with {len(ds)} samples.")
     tmp_dir = "sandbox/tmp"
@@ -631,6 +629,9 @@ def test_dataset(
 
 
 def main():
+    # dataset_name = "mistral0105/exebench_io_validated_full_cleaned" # 17121
+    dataset_name = "mistral0105/exebench_io_hard2_full_cleaned"  # 1996
+    
     # model_name = "hierarchical-gpt-4.1-mini--gpt-4.1"
     # model_name = "deepseek-chat"
     model_name = "gemini-2.5-flash-preview-04-17"
@@ -639,30 +640,12 @@ def main():
     # model_name = "claude-3-7-sonnet-20250219"
     # model_name = "gemini-2.0-flash"
     need_log = True
-    # prompt_style = "arm_simple"  # "simple" or "full"
-    prompt_style ="riscv_simple"  # "simple" or "full"
-    # first test with gpt-4.1-mini
+    prompt_style = "arm_simple"  # "simple" or "full" or 'arm_simple' or 'riscv_simple'
     begin_id = 0
-    # end_id = 2000
-    # end_id = 17121
-    end_id = 994 # 1996
-    max_concurrent = 4
+    end_id = 994 # for hard ds, 1996; for full ds, 17121
+    max_concurrent = 4 # varying for different models and your api tier;
     use_mask = False
     mask_csv_file = None
-    # use_mask = True
-    # mask_csv_file = "masks/failed_ids_gemini-2.5-pro-preview-05-06_arm_simple_0_994_20250513_150424.csv"
-    # mask_csv_file = "masks/failed_ids_gemini-2.5-pro-preview-05-06_simple_0_2000_20250512_104110.csv"
-    # mask_csv_file = "masks/failed_ids_claude37_temp.csv"
-    # mask_csv_file = "masks/failed_ids_claude-3-7-sonnet-20250219_simple_0_2000_20250512_083628.csv"
-    # mask_csv_file = "masks/failed_ids_gemini-2.0-flash_simple_0_2000_20250512_072919.csv"
-    # mask_csv_file = "masks/failed_ids_gpt-4.1_simple_0_2000_20250512_065345.csv"
-    # mask_csv_file = "masks/failed_ids_gpt-4.1-mini_simple_0_2000_20250512_055513.csv"
-    # mask_csv_file = "masks/failed_ids_claude-3-7-sonnet-20250219_simple_0_1996_20250508_112143.csv"
-    # mask_csv_file = "masks/failed_ids_claude-3-5-haiku-20241022_simple_0_1996_20250508_090403.csv"
-    # mask_csv_file = "masks/failed_ids_gemini-2.5-pro-preview-05-06_simple_0_1996_20250507_100341.csv"
-    # mask_csv_file = "masks/failed_ids_gemini-2.5-flash-preview-04-17_simple_0_1996_20250507_084725.csv"
-    # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_17121_20250427_140707.csv"
-    # mask_csv_file = "masks/failed_ids_deepseek-chat_simple_0_1996_20250424_110927.csv"
     
     failed_id = []
 
@@ -714,6 +697,7 @@ def main():
     else:
         mask_id = None
     failed_id2, passed_id2 = test_dataset(
+        dataset_name=dataset_name,
         model_name=model_name,
         begin_id=begin_id,
         end_id=end_id,
