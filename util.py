@@ -125,9 +125,7 @@ class Chat:
         rsp_content = response.choices[0].message.content
         self.messages.append({"role": "assistant", "content": rsp_content})
     
-    # 添加异步版本的chat方法
     async def chat_async(self, user_input=None):
-        """异步版本的聊天方法"""
         if user_input is None:
             user_input = input("User: \n")
         self.messages.append({"role": "user", "content": user_input})
@@ -141,14 +139,11 @@ class Chat:
         self.messages.append({"role": "assistant", "content": rsp_content})
         return rsp_content
     
-    # 替换原来的chat_async方法，改为使用线程池执行非阻塞操作
     def chat_non_blocking(self, user_input=None, thread_executor=None):
-        """使用线程池执行非阻塞聊天操作"""
         if user_input is None:
             user_input = input("User: \n")
         self.messages.append({"role": "user", "content": user_input})
         
-        # 如果提供了线程执行器，使用它来异步执行API调用
         if thread_executor:
             future = thread_executor.submit(
                 self._make_api_call, 
@@ -157,12 +152,10 @@ class Chat:
             )
             return future
         else:
-            # 退化为同步调用
             self._make_api_call(self.model_name, self.messages)
             return None
             
     def _make_api_call(self, model_name, messages):
-        """实际执行API调用的内部方法"""
         response = self.client.chat.completions.create(
             model=model_name,
             temperature=0.0,
