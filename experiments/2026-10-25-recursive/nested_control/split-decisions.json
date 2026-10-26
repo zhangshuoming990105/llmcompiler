@@ -1,0 +1,284 @@
+[
+  {
+    "id": "r",
+    "depth": 0,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s000",
+    "depth": 1,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001",
+    "depth": 1,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_init",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_condition",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body",
+    "depth": 2,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s000",
+    "depth": 3,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s000_condition",
+    "depth": 4,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s000_then",
+    "depth": 4,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001",
+    "depth": 3,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002",
+    "depth": 3,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_condition",
+    "depth": 4,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body",
+    "depth": 4,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_body_s000",
+    "depth": 5,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001",
+    "depth": 5,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_dispatch",
+    "depth": 6,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_value",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casecmp0",
+    "depth": 7,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casecmp0_condition",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casecmp1",
+    "depth": 7,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casecmp1_condition",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casecmp2",
+    "depth": 7,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casecmp2_condition",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody0",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody1",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody2",
+    "depth": 6,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody2_condition",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody2_then",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody3",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody4",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody5",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s001_casebody6",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s002",
+    "depth": 5,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s002_body_s002_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s002_body_s002_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s003",
+    "depth": 3,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s003_body",
+    "depth": 4,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s003_body_s000",
+    "depth": 5,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s003_body_s001",
+    "depth": 5,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s003_body_s001_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s003_body_s001_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s003_condition",
+    "depth": 4,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s004",
+    "depth": 3,
+    "decision": "split",
+    "reason": "all structural control policy"
+  },
+  {
+    "id": "r_s001_body_s004_condition",
+    "depth": 4,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s004_then",
+    "depth": 4,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_increment",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s002",
+    "depth": 1,
+    "decision": "keep",
+    "reason": "atomic region"
+  }
+]

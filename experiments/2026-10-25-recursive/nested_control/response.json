@@ -1,0 +1,124 @@
+{
+  "blocks": [
+    {
+      "id": "r_s000",
+      "assembly": "mov w8, #0\nstr w8, [sp, #16]"
+    },
+    {
+      "id": "r_s001_init",
+      "assembly": "mov w0, #0\nstr w0, [sp, #20]"
+    },
+    {
+      "id": "r_s001_condition",
+      "assembly": "ldr w1, [sp, #20]\nldr w2, [sp, #0]\ncmp w1, w2\ncset w0, lt"
+    },
+    {
+      "id": "r_s001_body_s000_condition",
+      "assembly": "ldr w8, [sp, #20]\nmov w9, #3\nsdiv w10, w8, w9\nmul w10, w10, w9\nsub w8, w8, w10\ncmp w8, #0\ncset w0, eq"
+    },
+    {
+      "id": "r_s001_body_s000_then",
+      "assembly": "b L_nested_flow_r_s001_increment"
+    },
+    {
+      "id": "r_s001_body_s001",
+      "assembly": "mov w0, #0\nstr w0, [sp, #24]"
+    },
+    {
+      "id": "r_s001_body_s002_condition",
+      "assembly": "ldr w0, [sp, #24]\ncmp w0, #4\ncset w0, lt"
+    },
+    {
+      "id": "r_s001_body_s002_body_s000",
+      "assembly": "ldr w0, [sp, #24]\nadd w0, w0, #1\nstr w0, [sp, #24]"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_value",
+      "assembly": "ldr x0, [sp, #8]\nldr w1, [sp, #20]\nsxtw x1, w1\nldr w2, [x0, x1, lsl #2]\nldr w3, [sp, #24]\nadd w2, w2, w3\nand w2, w2, #3\nstr w2, [sp, #28]"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casecmp0_condition",
+      "assembly": "ldr w8, [sp, #28]\ncmp w8, #0\ncset w0, eq"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casecmp1_condition",
+      "assembly": "ldr w0, [sp, #28]\ncmp w0, #1\ncset w0, eq"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casecmp2_condition",
+      "assembly": "ldr w8, [sp, #28]\ncmp w8, #2\ncset w0, eq"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casebody0",
+      "assembly": "ldr w0, [sp, #16]\nldr w1, [sp, #24]\nadd w0, w0, w1\nstr w0, [sp, #16]"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casebody1",
+      "assembly": "b L_nested_flow_r_s001_body_s002_body_s001_end"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casebody2_condition",
+      "assembly": "ldr w0, [sp, #24]\ncmp w0, #2\ncset w0, eq"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casebody2_then",
+      "assembly": "b L_nested_flow_r_s001_body_s002_cond"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casebody3",
+      "assembly": "ldr w0, [sp, #16]\nldr w1, [sp, #20]\nsub w0, w0, w1\nstr w0, [sp, #16]"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casebody4",
+      "assembly": "ldr w0, [sp, #16]\nadd w0, w0, #3\nstr w0, [sp, #16]"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casebody5",
+      "assembly": "b L_nested_flow_r_s001_body_s002_body_s001_end"
+    },
+    {
+      "id": "r_s001_body_s002_body_s001_casebody6",
+      "assembly": "ldr x0, [sp, #8]\nldr w1, [sp, #20]\nsxtw x1, w1\nldr w2, [x0, x1, lsl #2]\nldr w3, [sp, #16]\nadd w3, w3, w2\nstr w3, [sp, #16]"
+    },
+    {
+      "id": "r_s001_body_s002_body_s002_condition",
+      "assembly": "ldr w0, [sp, #16]\ncmp w0, #200\ncset w0, gt"
+    },
+    {
+      "id": "r_s001_body_s002_body_s002_then",
+      "assembly": "b L_nested_flow_r_s001_body_s002_end"
+    },
+    {
+      "id": "r_s001_body_s003_body_s000",
+      "assembly": "ldr w0, [sp, #16]\nsub w0, w0, #1\nstr w0, [sp, #16]"
+    },
+    {
+      "id": "r_s001_body_s003_body_s001_condition",
+      "assembly": "ldr w8, [sp, #16]\nmov w9, #5\nsdiv w10, w8, w9\nmul w10, w10, w9\nsub w8, w8, w10\ncmp w8, #0\ncset w0, eq"
+    },
+    {
+      "id": "r_s001_body_s003_body_s001_then",
+      "assembly": "b L_nested_flow_r_s001_body_s003_end"
+    },
+    {
+      "id": "r_s001_body_s003_condition",
+      "assembly": "ldr w0, [sp, #16]\ncmp w0, #100\ncset w0, gt"
+    },
+    {
+      "id": "r_s001_body_s004_condition",
+      "assembly": "ldr w8, [sp, #16]\ncmn w8, #100\ncset w0, lt"
+    },
+    {
+      "id": "r_s001_body_s004_then",
+      "assembly": "ldr w0, [sp, #16]\nb L_nested_flow_return"
+    },
+    {
+      "id": "r_s001_increment",
+      "assembly": "ldr w0, [sp, #20]\nadd w0, w0, #1\nstr w0, [sp, #20]"
+    },
+    {
+      "id": "r_s002",
+      "assembly": "ldr w0, [sp, #16]\nb L_nested_flow_return"
+    }
+  ]
+}

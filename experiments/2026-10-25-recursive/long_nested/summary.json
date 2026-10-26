@@ -1,0 +1,20 @@
+{
+  "source_lines": 2155,
+  "initial_regions": 122,
+  "final_regions": 123,
+  "max_region_lines": 34,
+  "max_split_depth": 8,
+  "structural_refinement_rounds": 1,
+  "local_assembler_repair_rounds": 1,
+  "repaired_regions": 21,
+  "unchanged_regions_reused_during_repair": 102,
+  "status": "passed",
+  "differential_checks": 200,
+  "failures": 0,
+  "target": "arm64-macos",
+  "agent": "pi",
+  "cli_version": "1.2.0",
+  "reported_model": "mco-6",
+  "source_kind": "synthetic generated stress function",
+  "assembly_sha256": "26a6a12032855629881b848ed97d977a3fe4bbeb528b99ef9891c8e75e1247d7"
+}

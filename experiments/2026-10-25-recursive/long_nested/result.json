@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "source_sha256": "053baa97054438a2ab35e5befc48a22b8c78ef90e93a50340ffe38b8cc42fdf2",
+  "driver_sha256": "a4bcce8a26dc81a703ea32966eecac3086bedb12ad2459296889df7351e4eae1",
+  "assembly_sha256": "26a6a12032855629881b848ed97d977a3fe4bbeb528b99ef9891c8e75e1247d7",
+  "commands": [
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O0",
+      "-fno-lto",
+      "-Dlong_kernel=reference",
+      "-c",
+      "benchmarks/recursive/long_nested/source.c",
+      "-o",
+      "runs/long-neural-verification-20261025-01/reference.o"
+    ],
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O0",
+      "-fno-lto",
+      "benchmarks/recursive/long_nested/driver.c",
+      "runs/pi-long-repaired-20261025-01/candidate.s",
+      "runs/long-neural-verification-20261025-01/reference.o",
+      "-o",
+      "runs/long-neural-verification-20261025-01/check"
+    ]
+  ],
+  "exit_code": 0,
+  "checks": 200,
+  "failures": 0,
+  "seconds": 0.7946456669997133
+}

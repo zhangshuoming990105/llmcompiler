@@ -1,0 +1,1070 @@
+[
+  {
+    "id": "r",
+    "depth": 0,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s000",
+    "depth": 1,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001",
+    "depth": 1,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_init",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_condition",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body",
+    "depth": 2,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s000",
+    "depth": 3,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001",
+    "depth": 3,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_condition",
+    "depth": 4,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body",
+    "depth": 4,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s000",
+    "depth": 5,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else_left",
+    "depth": 7,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else_left_left",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else_left_right",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_left",
+    "depth": 7,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_left_left",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_left_right",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_right",
+    "depth": 7,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_right_left",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "keep structural control policy"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_right_right",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "keep structural control policy"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s008",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s008_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s008_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s008_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s009",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s009_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s009_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s009_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s010",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s010_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s010_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s010_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s011",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s011_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s011_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s011_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s012",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s012_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s012_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s012_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s013",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s013_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s013_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s013_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s014",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s014_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s014_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s014_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s015",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s015_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s015_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s015_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s016",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s016_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s016_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s016_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s017",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s017_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s017_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s017_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s018",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s018_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s018_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s018_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s019",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s019_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s019_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s019_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s020",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s020_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s020_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s020_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s021",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s021_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s021_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s021_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s022",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s022_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s022_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s022_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s023",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s023_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s023_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s023_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s024",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s024_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s024_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s024_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s025",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s025_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s025_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s025_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s026",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s026_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s026_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s026_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s027",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s027_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s027_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s027_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s028",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s028_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s028_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s028_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s029",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s029_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s029_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s029_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s030",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s030_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s030_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s030_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s031",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s032",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s032_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s032_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s032_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s002",
+    "depth": 3,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_increment",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s002",
+    "depth": 1,
+    "decision": "keep",
+    "reason": "atomic region"
+  }
+]

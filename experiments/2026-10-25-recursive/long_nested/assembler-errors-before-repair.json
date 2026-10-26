@@ -1,0 +1,666 @@
+{
+  "status": "assembly_error",
+  "exit_code": 1,
+  "errors": [
+    {
+      "line": 2467,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s005_else_right",
+      "assembly": "add w1, w1, #43539"
+    },
+    {
+      "line": 2495,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s005_else_right",
+      "assembly": "add w1, w1, #25316"
+    },
+    {
+      "line": 2523,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s005_else_right",
+      "assembly": "add w1, w1, #47865"
+    },
+    {
+      "line": 2551,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s005_else_right",
+      "assembly": "add w1, w1, #24469"
+    },
+    {
+      "line": 2972,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s006_else_right",
+      "assembly": "add w9, w9, #49014"
+    },
+    {
+      "line": 2996,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s006_else_right",
+      "assembly": "add w9, w9, #33614"
+    },
+    {
+      "line": 3020,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s006_else_right",
+      "assembly": "add w9, w9, #17176"
+    },
+    {
+      "line": 3044,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s006_else_right",
+      "assembly": "add w9, w9, #23777"
+    },
+    {
+      "line": 3083,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s007_then_left",
+      "assembly": "add w1, w1, #5422"
+    },
+    {
+      "line": 3610,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s008_then",
+      "assembly": "add w9, w9, #11318"
+    },
+    {
+      "line": 3633,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s008_then",
+      "assembly": "add w9, w9, #23661"
+    },
+    {
+      "line": 3679,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s008_then",
+      "assembly": "add w9, w9, #46280"
+    },
+    {
+      "line": 3724,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s008_then",
+      "assembly": "add w9, w9, #38152"
+    },
+    {
+      "line": 3747,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s008_then",
+      "assembly": "add w9, w9, #54480"
+    },
+    {
+      "line": 4495,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s010_then",
+      "assembly": "add w3, w3, #48343"
+    },
+    {
+      "line": 4523,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s010_then",
+      "assembly": "add w3, w3, #13155"
+    },
+    {
+      "line": 4551,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s010_then",
+      "assembly": "add w3, w3, #59729"
+    },
+    {
+      "line": 4579,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s010_then",
+      "assembly": "add w3, w3, #28479"
+    },
+    {
+      "line": 4607,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s010_then",
+      "assembly": "add w3, w3, #47143"
+    },
+    {
+      "line": 4635,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s010_then",
+      "assembly": "add w3, w3, #34347"
+    },
+    {
+      "line": 4663,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s010_then",
+      "assembly": "add w3, w3, #39244"
+    },
+    {
+      "line": 6038,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s013_else",
+      "assembly": "add w3, w3, #10131"
+    },
+    {
+      "line": 6066,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s013_else",
+      "assembly": "add w3, w3, #49199"
+    },
+    {
+      "line": 6094,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s013_else",
+      "assembly": "add w3, w3, #36518"
+    },
+    {
+      "line": 6122,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s013_else",
+      "assembly": "add w3, w3, #61643"
+    },
+    {
+      "line": 6150,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s013_else",
+      "assembly": "add w3, w3, #30353"
+    },
+    {
+      "line": 6178,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s013_else",
+      "assembly": "add w3, w3, #49638"
+    },
+    {
+      "line": 6206,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s013_else",
+      "assembly": "add w3, w3, #25570"
+    },
+    {
+      "line": 6234,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s013_else",
+      "assembly": "add w3, w3, #50923"
+    },
+    {
+      "line": 6280,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_then",
+      "assembly": "add w11, w11, #52114"
+    },
+    {
+      "line": 6299,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_then",
+      "assembly": "add w11, w11, #54495"
+    },
+    {
+      "line": 6318,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_then",
+      "assembly": "add w11, w11, #9206"
+    },
+    {
+      "line": 6337,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_then",
+      "assembly": "add w11, w11, #63468"
+    },
+    {
+      "line": 6355,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_then",
+      "assembly": "add w11, w11, #62257"
+    },
+    {
+      "line": 6374,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_then",
+      "assembly": "add w11, w11, #54645"
+    },
+    {
+      "line": 6393,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_then",
+      "assembly": "add w11, w11, #63608"
+    },
+    {
+      "line": 6411,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_then",
+      "assembly": "add w11, w11, #30023"
+    },
+    {
+      "line": 6433,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_else",
+      "assembly": "add w1, w1, #4608"
+    },
+    {
+      "line": 6528,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s014_else",
+      "assembly": "add w1, w1, #4800"
+    },
+    {
+      "line": 8079,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_then",
+      "assembly": "add w1, w1, #23376"
+    },
+    {
+      "line": 8135,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_then",
+      "assembly": "add w1, w1, #34031"
+    },
+    {
+      "line": 8163,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_then",
+      "assembly": "add w1, w1, #60946"
+    },
+    {
+      "line": 8191,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_then",
+      "assembly": "add w1, w1, #36170"
+    },
+    {
+      "line": 8219,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_then",
+      "assembly": "add w1, w1, #34637"
+    },
+    {
+      "line": 8247,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_then",
+      "assembly": "add w1, w1, #19225"
+    },
+    {
+      "line": 8275,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_then",
+      "assembly": "add w1, w1, #53547"
+    },
+    {
+      "line": 8305,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_else",
+      "assembly": "add w9, w9, #59317"
+    },
+    {
+      "line": 8329,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_else",
+      "assembly": "add w9, w9, #56857"
+    },
+    {
+      "line": 8353,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_else",
+      "assembly": "add w9, w9, #54080"
+    },
+    {
+      "line": 8377,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_else",
+      "assembly": "add w9, w9, #43879"
+    },
+    {
+      "line": 8401,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_else",
+      "assembly": "add w9, w9, #13602"
+    },
+    {
+      "line": 8425,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_else",
+      "assembly": "add w9, w9, #22109"
+    },
+    {
+      "line": 8449,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_else",
+      "assembly": "add w9, w9, #37881"
+    },
+    {
+      "line": 8473,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s018_else",
+      "assembly": "add w9, w9, #11971"
+    },
+    {
+      "line": 8512,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s019_then",
+      "assembly": "add w1, w1, #26739"
+    },
+    {
+      "line": 8546,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s019_then",
+      "assembly": "add w1, w1, #6851"
+    },
+    {
+      "line": 8615,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s019_then",
+      "assembly": "add w1, w1, #4734"
+    },
+    {
+      "line": 9584,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s021_else",
+      "assembly": "add w3, w3, #7610"
+    },
+    {
+      "line": 9793,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s022_then",
+      "assembly": "add w3, w3, #33635"
+    },
+    {
+      "line": 9821,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s022_then",
+      "assembly": "add w3, w3, #45297"
+    },
+    {
+      "line": 9849,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s022_then",
+      "assembly": "add w3, w3, #25115"
+    },
+    {
+      "line": 9877,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s022_then",
+      "assembly": "add w3, w3, #6324"
+    },
+    {
+      "line": 9905,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s022_then",
+      "assembly": "add w3, w3, #33427"
+    },
+    {
+      "line": 9933,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s022_then",
+      "assembly": "add w3, w3, #63633"
+    },
+    {
+      "line": 9961,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s022_then",
+      "assembly": "add w3, w3, #65487"
+    },
+    {
+      "line": 9989,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s022_then",
+      "assembly": "add w3, w3, #24296"
+    },
+    {
+      "line": 10815,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s024_then",
+      "assembly": "add w13, w13, #43213"
+    },
+    {
+      "line": 10986,
+      "column": 1,
+      "message": "unexpected token at start of statement",
+      "region": "r_s001_body_s001_body_s024_else",
+      "assembly": ", #16]"
+    },
+    {
+      "line": 11249,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s025_then",
+      "assembly": "add w10, w10, #8221"
+    },
+    {
+      "line": 11398,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s025_else",
+      "assembly": "add w3, w3, #36843"
+    },
+    {
+      "line": 11426,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s025_else",
+      "assembly": "add w3, w3, #8315"
+    },
+    {
+      "line": 11454,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s025_else",
+      "assembly": "add w3, w3, #13468"
+    },
+    {
+      "line": 11482,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s025_else",
+      "assembly": "add w3, w3, #8096"
+    },
+    {
+      "line": 11510,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s025_else",
+      "assembly": "add w3, w3, #60653"
+    },
+    {
+      "line": 11566,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s025_else",
+      "assembly": "add w3, w3, #5054"
+    },
+    {
+      "line": 11594,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s025_else",
+      "assembly": "add w3, w3, #11476"
+    },
+    {
+      "line": 12105,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s027_then",
+      "assembly": "add w3, w3, #61232"
+    },
+    {
+      "line": 12129,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s027_then",
+      "assembly": "add w3, w3, #38180"
+    },
+    {
+      "line": 12153,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s027_then",
+      "assembly": "add w3, w3, #15162"
+    },
+    {
+      "line": 12201,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s027_then",
+      "assembly": "add w3, w3, #32110"
+    },
+    {
+      "line": 13814,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_then_left",
+      "assembly": "add w9, w9, #42846"
+    },
+    {
+      "line": 13878,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_then_left",
+      "assembly": "add w9, w9, #55012"
+    },
+    {
+      "line": 13910,
+      "column": 13,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_then_left",
+      "assembly": "add w9, w9, #48713"
+    },
+    {
+      "line": 14100,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_else",
+      "assembly": "add w11, w11, #24174"
+    },
+    {
+      "line": 14119,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_else",
+      "assembly": "add w11, w11, #13993"
+    },
+    {
+      "line": 14138,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_else",
+      "assembly": "add w11, w11, #60027"
+    },
+    {
+      "line": 14157,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_else",
+      "assembly": "add w11, w11, #31839"
+    },
+    {
+      "line": 14195,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_else",
+      "assembly": "add w11, w11, #29579"
+    },
+    {
+      "line": 14214,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_else",
+      "assembly": "add w11, w11, #34843"
+    },
+    {
+      "line": 14233,
+      "column": 15,
+      "message": "expected compatible register, symbol or integer in range [0, 4095]",
+      "region": "r_s001_body_s001_body_s031_else",
+      "assembly": "add w11, w11, #63774"
+    },
+    {
+      "line": 14429,
+      "column": 18,
+      "message": "expected 'lsl' or 'sxtx' with optional shift of #0 or #2",
+      "region": "r_s001_body_s001_body_s032_else",
+      "assembly": "ldr w5, [x4, x3, lsl #3]"
+    }
+  ],
+  "mapped_regions": [
+    "r_s001_body_s001_body_s005_else_right",
+    "r_s001_body_s001_body_s006_else_right",
+    "r_s001_body_s001_body_s007_then_left",
+    "r_s001_body_s001_body_s008_then",
+    "r_s001_body_s001_body_s010_then",
+    "r_s001_body_s001_body_s013_else",
+    "r_s001_body_s001_body_s014_else",
+    "r_s001_body_s001_body_s014_then",
+    "r_s001_body_s001_body_s018_else",
+    "r_s001_body_s001_body_s018_then",
+    "r_s001_body_s001_body_s019_then",
+    "r_s001_body_s001_body_s021_else",
+    "r_s001_body_s001_body_s022_then",
+    "r_s001_body_s001_body_s024_else",
+    "r_s001_body_s001_body_s024_then",
+    "r_s001_body_s001_body_s025_else",
+    "r_s001_body_s001_body_s025_then",
+    "r_s001_body_s001_body_s027_then",
+    "r_s001_body_s001_body_s031_else",
+    "r_s001_body_s001_body_s031_then_left",
+    "r_s001_body_s001_body_s032_else"
+  ]
+}

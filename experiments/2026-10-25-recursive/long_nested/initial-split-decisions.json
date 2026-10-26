@@ -1,0 +1,1058 @@
+[
+  {
+    "id": "r",
+    "depth": 0,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s000",
+    "depth": 1,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001",
+    "depth": 1,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_init",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_condition",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body",
+    "depth": 2,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s000",
+    "depth": 3,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001",
+    "depth": 3,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_condition",
+    "depth": 4,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body",
+    "depth": 4,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s000",
+    "depth": 5,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else_left",
+    "depth": 7,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else_left_left",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else_left_right",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s001_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s002_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s003_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_left",
+    "depth": 7,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_left_left",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_left_right",
+    "depth": 8,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s004_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s005_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s006_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_else",
+    "depth": 6,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_else_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s007_else_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s008",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s008_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s008_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s008_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s009",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s009_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s009_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s009_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s010",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s010_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s010_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s010_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s011",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s011_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s011_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s011_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s012",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s012_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s012_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s012_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s013",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s013_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s013_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s013_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s014",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s014_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s014_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s014_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s015",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s015_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s015_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s015_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s016",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s016_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s016_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s016_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s017",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s017_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s017_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s017_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s018",
+    "depth": 5,
+    "decision": "split",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s018_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s018_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s018_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "saved or explicitly supplied decision"
+  },
+  {
+    "id": "r_s001_body_s001_body_s019",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Each branch has ~32 straight-line statements with array indexing, shifts, and multiplies; splitting the IfStmt into condition plus two large then/else sequences keeps each lowered unit manageable and bounds output size."
+  },
+  {
+    "id": "r_s001_body_s001_body_s019_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s019_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings and repetitive shift/xor/mul patterns; no control flow and manageable output size, so it stays one coherent translatable unit."
+  },
+  {
+    "id": "r_s001_body_s001_body_s019_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (mul/xor/rotate/shift/add) on lego_v3_state with explicit bindings; ~32 sequential lines are a manageable single unit with no control flow, so splitting into tiny halves adds no benefit."
+  },
+  {
+    "id": "r_s001_body_s001_body_s020",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Both branches are large straight-line hash chains (~30-33 statements each); splitting the condition and the two branch Sequences yields smaller composable units and bounds per-unit output size."
+  },
+  {
+    "id": "r_s001_body_s001_body_s020_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s020_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings on a single state variable; manageable as one unit despite ~32 lines, no control flow and only simple array/modulo indexing."
+  },
+  {
+    "id": "r_s001_body_s001_body_s020_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (32 statements) with explicit bindings and simple modular array reads; no control flow and modest output, so it lowers reliably as one unit."
+  },
+  {
+    "id": "r_s001_body_s001_body_s021",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Each branch holds ~32 chained state updates (modular mul, rotate, xor-shift, array-indexed mixing); both bodies together produce a large assembly output, so exposing condition and the two Sequence branches yields more manageable composable units."
+  },
+  {
+    "id": "r_s001_body_s001_body_s021_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s021_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings and no control flow; 32 uniform statements are a manageable single unit for accurate lowering, and subdividing would only fragment the state-dependency chain."
+  },
+  {
+    "id": "r_s001_body_s001_body_s021_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width uint arithmetic with explicit bindings and repetitive mix steps; ~34 lines is a manageable single unit with no control flow, so keep intact rather than fragmenting."
+  },
+  {
+    "id": "r_s001_body_s001_body_s022",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Both branches contain ~30+ fixed-width arithmetic statements each, so the combined if/else output is large; splitting into condition and two separate then/else sequences yields manageable, composable units."
+  },
+  {
+    "id": "r_s001_body_s001_body_s022_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s022_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic on a single state variable with explicit bindings; ~32 bindings of rotate/xor/mul/add and modular array indexing form a coherent translatable unit that stays within a reasonable output budget."
+  },
+  {
+    "id": "r_s001_body_s001_body_s022_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width arithmetic on a single state var with explicit bindings; ~32 bindings and array mods are a manageable, composable unit worth lowering together rather than fragmenting."
+  },
+  {
+    "id": "r_s001_body_s001_body_s023",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Each branch has ~32 straight-line statements; splitting into condition and two large then/else sequences keeps each lowered unit and its output size manageable for accurate independent translation."
+  },
+  {
+    "id": "r_s001_body_s001_body_s023_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s023_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic on lego_v3_state with explicit bindings; ~32 statements form a cohesive, deterministic unit (shifts, xor, modular array indexing) that translates accurately as one block without excessive output size."
+  },
+  {
+    "id": "r_s001_body_s001_body_s023_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings and repeated array-indexed hashing; no control flow and a bounded, manageable output size make this a single responsible lowering unit."
+  },
+  {
+    "id": "r_s001_body_s001_body_s024",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Each branch holds ~30 fixed-width arithmetic statements; splitting into condition, then-sequence, and else-sequence keeps each unit's output size manageable for accurate independent translation."
+  },
+  {
+    "id": "r_s001_body_s001_body_s024_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s024_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings; ~32 deterministic mul/xor/rotate/modulo ops on a single state variable, a manageable unit whose output size and complexity do not warrant subdivision."
+  },
+  {
+    "id": "r_s001_body_s001_body_s024_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (xor/mul/add/rotate with modular array indexing) over explicit bindings; 32 statements with no control flow form one manageable, composable unit that is cleaner to lower together than to split."
+  },
+  {
+    "id": "r_s001_body_s001_body_s025",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Each branch holds ~30 interdependent 32-bit mix steps; splitting the condition from the two long then/else sequences keeps each unit's assembly output manageable and verifiable independently."
+  },
+  {
+    "id": "r_s001_body_s001_body_s025_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s025_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (xor/mul/add/rotate with modular array indexing) over explicit bindings; ~32 uniform statements form one manageable, predictable lowering unit without branches or loops."
+  },
+  {
+    "id": "r_s001_body_s001_body_s025_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (shifts, xor, mul/add, modular array loads) with explicit bindings and no control flow; a single manageable unit that should not be proactively subdivided."
+  },
+  {
+    "id": "r_s001_body_s001_body_s026",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Each branch holds 30+ interdependent state-update statements; splitting into condition and the two long then/else sequences keeps each lowering unit and its assembly output manageable."
+  },
+  {
+    "id": "r_s001_body_s001_body_s026_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s026_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width uint arithmetic with explicit bindings and repeated identical operation patterns; ~32 statements lower reliably as one unit without excessive output."
+  },
+  {
+    "id": "r_s001_body_s001_body_s026_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width uint arithmetic with explicit bindings; ~32 bindings of shifts/xor/mul/mod on lego_v3_state, a manageable single unit well within output budget."
+  },
+  {
+    "id": "r_s001_body_s001_body_s027",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Both then (32 statements) and else (34 statements) branches are large straight-line hash kernels; splitting the IfStmt into condition, branch, and two separate sequence bodies keeps each translatable unit manageable and bounds output size."
+  },
+  {
+    "id": "r_s001_body_s001_body_s027_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s027_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic on explicitly bound variables with ~32 uniform mixing lines; manageable as a single unit for accurate lowering and modest output size."
+  },
+  {
+    "id": "r_s001_body_s001_body_s027_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings and repetitive shift/xor/mul/mod patterns; ~32 lines is a manageable single unit with no control flow to split."
+  },
+  {
+    "id": "r_s001_body_s001_body_s028",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Both branches are large straight-line hash sequences (~32 statements each) plus a condition; splitting into condition, then-sequence, and else-sequence yields composable units with more manageable output size each."
+  },
+  {
+    "id": "r_s001_body_s001_body_s028_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s028_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (~32 statements) with explicit bindings: shifts, XORs, multiplies, and modular array indexing into lego_v0_a, all updating lego_v3_state sequentially; a cohesive manageable unit well within a single translation budget."
+  },
+  {
+    "id": "r_s001_body_s001_body_s028_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings; ~32 sequential ops on a single live variable, no control flow, a manageable unit for accurate independent lowering."
+  },
+  {
+    "id": "r_s001_body_s001_body_s029",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Two large straight-line branches (~32 statements each) plus condition and control flow; splitting into condition/then/else sequences keeps each lowered unit manageable and bounds output size."
+  },
+  {
+    "id": "r_s001_body_s001_body_s029_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s029_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (32 statements) with explicit bindings and simple array/modulo indexing; no control flow, forms a cohesive single translation unit within a reasonable output budget."
+  },
+  {
+    "id": "r_s001_body_s001_body_s029_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings; ~32 sequential statements over simple scalar state and array mod-index accesses, a manageable single unit without control flow."
+  },
+  {
+    "id": "r_s001_body_s001_body_s030",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Both then and else branches each contain ~30+ fixed-width arithmetic statements with array indexing; the combined IfStmt is large enough that lowering each branch independently reduces per-unit output size and translation risk."
+  },
+  {
+    "id": "r_s001_body_s001_body_s030_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s030_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (32 statements of shifts/xor/mul/mod with explicit bindings) on a single state variable; a cohesive hash-mixing unit that is manageable for accurate independent lowering without proactive subdivision."
+  },
+  {
+    "id": "r_s001_body_s001_body_s030_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings; ~32 sequential statements over a single state variable with no control flow, a manageable unit that translates accurately as one region."
+  },
+  {
+    "id": "r_s001_body_s001_body_s031",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Two large branches each with ~30 state-mutation statements; splitting into condition plus then/else sequences keeps per-unit output size manageable and composable."
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_then",
+    "depth": 6,
+    "decision": "split",
+    "reason": "This is a long straight-line sequence of ~33 statements with repeated array-mod indexing and rotate/multiply patterns; the output assembly budget is large enough that splitting into the two provided halves keeps each unit manageable and composable."
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_then_left",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (~16 statements) with explicit bindings and simple array indexing; a cohesive unit well within responsible lowering scope, no control flow to expose."
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_then_right",
+    "depth": 7,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic (16 statements) with explicit bindings and simple array indexing; a cohesive hash-mixing unit that fits a single manageable translation with modest output size."
+  },
+  {
+    "id": "r_s001_body_s001_body_s031_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic with explicit bindings; uniform repeating pattern of mul/xor/rotate/mod-index ops on lego_v3_state, a manageable single unit for accurate lowering despite ~32 lines."
+  },
+  {
+    "id": "r_s001_body_s001_body_s032",
+    "depth": 5,
+    "decision": "split",
+    "reason": "Each branch has ~32 long fixed-width arithmetic statements with array indexing; combined output exceeds a manageable single unit, so expose condition and both branch sequences as composable parts."
+  },
+  {
+    "id": "r_s001_body_s001_body_s032_condition",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_body_s001_body_s032_then",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width unsigned arithmetic on lego_v3_state with explicit bindings; uniform repeated pattern of multiply/xor/rotate/shift and array lookups remains an accurate, manageable single translation unit within output budget."
+  },
+  {
+    "id": "r_s001_body_s001_body_s032_else",
+    "depth": 6,
+    "decision": "keep",
+    "reason": "Straight-line fixed-width 32-bit arithmetic with explicit bindings, no control flow and only array indexing with modulo; a cohesive hash-mixing block that lowers accurately as one unit without exceeding a reasonable output budget."
+  },
+  {
+    "id": "r_s001_body_s002",
+    "depth": 3,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s001_increment",
+    "depth": 2,
+    "decision": "keep",
+    "reason": "atomic region"
+  },
+  {
+    "id": "r_s002",
+    "depth": 1,
+    "decision": "keep",
+    "reason": "atomic region"
+  }
+]

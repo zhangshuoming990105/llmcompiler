@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "description": "Three archived C functions and three new diagnostic kernels. Inputs exclude signed overflow, out-of-bounds access, and other undefined behavior. This is a pilot, not the historical ExeBench benchmark.",
+  "cases": [
+    {
+      "id": "legacy_gcd",
+      "function": "gcd",
+      "source": "legacy_gcd/source.c",
+      "driver": "legacy_gcd/driver.c",
+      "origin": {
+        "kind": "archived-source",
+        "case_id": 8,
+        "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_8/tmp_8.c",
+        "sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+        "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+      }
+    },
+    {
+      "id": "legacy_bitop",
+      "function": "apply_binary_operation_on_byte",
+      "source": "legacy_bitop/source.c",
+      "driver": "legacy_bitop/driver.c",
+      "origin": {
+        "kind": "archived-source",
+        "case_id": 21,
+        "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_21/tmp_21.c",
+        "sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+        "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+      }
+    },
+    {
+      "id": "legacy_switch",
+      "function": "color_char_to_attr",
+      "source": "legacy_switch/source.c",
+      "driver": "legacy_switch/driver.c",
+      "origin": {
+        "kind": "archived-source",
+        "case_id": 13,
+        "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_13/tmp_13.c",
+        "sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+        "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+      }
+    },
+    {
+      "id": "shadow_nested",
+      "function": "scoped_sum",
+      "source": "shadow_nested/source.c",
+      "driver": "shadow_nested/driver.c",
+      "origin": {
+        "kind": "new-diagnostic",
+        "purpose": "shadow_nested"
+      }
+    },
+    {
+      "id": "array_stride",
+      "function": "update_stride",
+      "source": "array_stride/source.c",
+      "driver": "array_stride/driver.c",
+      "origin": {
+        "kind": "new-diagnostic",
+        "purpose": "array_stride"
+      }
+    },
+    {
+      "id": "struct_offset",
+      "function": "score_items",
+      "source": "struct_offset/source.c",
+      "driver": "struct_offset/driver.c",
+      "origin": {
+        "kind": "new-diagnostic",
+        "purpose": "struct_offset"
+      }
+    }
+  ]
+}

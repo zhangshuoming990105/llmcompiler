@@ -1,0 +1,62 @@
+{
+  "clang:compiler-control": {
+    "attempted": 6,
+    "passed": 6,
+    "checks": 7642,
+    "generation_seconds": 0,
+    "input_tokens": 0,
+    "cached_input_tokens": 0,
+    "output_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "clang:rename-control": {
+    "attempted": 6,
+    "passed": 6,
+    "checks": 7642,
+    "generation_seconds": 0,
+    "input_tokens": 0,
+    "cached_input_tokens": 0,
+    "output_tokens": 0,
+    "reasoning_output_tokens": 0
+  },
+  "codex:direct": {
+    "attempted": 6,
+    "passed": 6,
+    "checks": 7642,
+    "generation_seconds": 136.28,
+    "input_tokens": 111684,
+    "cached_input_tokens": 0,
+    "output_tokens": 3807,
+    "reasoning_output_tokens": 2092
+  },
+  "codex:lego-bundle": {
+    "attempted": 6,
+    "passed": 6,
+    "checks": 7642,
+    "generation_seconds": 138.05,
+    "input_tokens": 126287,
+    "cached_input_tokens": 17152,
+    "output_tokens": 4688,
+    "reasoning_output_tokens": 2066
+  },
+  "codex:lego-block": {
+    "attempted": 1,
+    "passed": 1,
+    "checks": 1000,
+    "generation_seconds": 49.26,
+    "input_tokens": 62539,
+    "cached_input_tokens": 0,
+    "output_tokens": 818,
+    "reasoning_output_tokens": 508
+  },
+  "pi:lego-bundle": {
+    "attempted": 1,
+    "passed": 1,
+    "checks": 5225,
+    "generation_seconds": 15.49,
+    "input_tokens": 5208,
+    "cached_input_tokens": 0,
+    "output_tokens": 677,
+    "reasoning_output_tokens": 0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "compiler-control": {
+    "status": "passed",
+    "checks": 200,
+    "failures": 0,
+    "source_sha256": "053baa97054438a2ab35e5befc48a22b8c78ef90e93a50340ffe38b8cc42fdf2",
+    "assembly_sha256": "ca4875e5041aa39298bb79350e8f5410eb688791b8efb26a38b3c6dbbc8c4bff"
+  },
+  "rename-control": {
+    "status": "passed",
+    "checks": 200,
+    "failures": 0,
+    "source_sha256": "053baa97054438a2ab35e5befc48a22b8c78ef90e93a50340ffe38b8cc42fdf2",
+    "assembly_sha256": "ca4875e5041aa39298bb79350e8f5410eb688791b8efb26a38b3c6dbbc8c4bff"
+  },
+  "split-control": {
+    "status": "passed",
+    "checks": 200,
+    "failures": 0,
+    "source_sha256": "053baa97054438a2ab35e5befc48a22b8c78ef90e93a50340ffe38b8cc42fdf2",
+    "assembly_sha256": "b18a31fbcbf53fb93d9c0390c608fda4f62c4102e2e60923655c3237f9b703de"
+  },
+  "source_lines": 2155,
+  "atomic_leaves": 2089,
+  "max_depth": 11
+}

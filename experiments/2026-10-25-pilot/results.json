@@ -1,0 +1,935 @@
+[
+  {
+    "case": "legacy_gcd",
+    "mode": "compiler-control",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 8,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_8/tmp_8.c",
+      "sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "3c70df842334c3aeae01ad0c8f237a1321784ed067b1c75500e0a27b2a077118",
+    "source_sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+    "driver_sha256": "a83e7d9ff428b41a73a6d70f7f8be2f818bda5713cd7ef4360a3257217fe159e",
+    "assembly_sha256": "34505ca0c5b5bc089a4b0d5b2c06d2f03f242948c0a23ef60daac73a03e139ff",
+    "exit_code": 0,
+    "checks": 5225,
+    "failures": 0,
+    "seconds": 0.5217964589828625,
+    "total_seconds": 0.5583313340321183,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "legacy_gcd",
+    "mode": "rename-control",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 8,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_8/tmp_8.c",
+      "sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "3c70df842334c3aeae01ad0c8f237a1321784ed067b1c75500e0a27b2a077118",
+    "source_sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+    "driver_sha256": "a83e7d9ff428b41a73a6d70f7f8be2f818bda5713cd7ef4360a3257217fe159e",
+    "assembly_sha256": "34505ca0c5b5bc089a4b0d5b2c06d2f03f242948c0a23ef60daac73a03e139ff",
+    "exit_code": 0,
+    "checks": 5225,
+    "failures": 0,
+    "seconds": 0.51784087496344,
+    "total_seconds": 0.5543380840099417,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "legacy_bitop",
+    "mode": "compiler-control",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 21,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_21/tmp_21.c",
+      "sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "b54941729c1a364a7c77312e1b7c694823d372aaa8883bbbaf42f12029ae21e4",
+    "source_sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+    "driver_sha256": "2e974db9206af59018a993b336e228430297d9f76f3e3c01cbf779e609d11b23",
+    "assembly_sha256": "682d8a3e0c631721d9a67e450b204c838dbdab4def336b17f703b9884186133c",
+    "exit_code": 0,
+    "checks": 216,
+    "failures": 0,
+    "seconds": 0.5401118749869056,
+    "total_seconds": 0.5707427080487832,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "legacy_bitop",
+    "mode": "rename-control",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 21,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_21/tmp_21.c",
+      "sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "b54941729c1a364a7c77312e1b7c694823d372aaa8883bbbaf42f12029ae21e4",
+    "source_sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+    "driver_sha256": "2e974db9206af59018a993b336e228430297d9f76f3e3c01cbf779e609d11b23",
+    "assembly_sha256": "682d8a3e0c631721d9a67e450b204c838dbdab4def336b17f703b9884186133c",
+    "exit_code": 0,
+    "checks": 216,
+    "failures": 0,
+    "seconds": 0.5215268339961767,
+    "total_seconds": 0.5510010419529863,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "legacy_switch",
+    "mode": "compiler-control",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 13,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_13/tmp_13.c",
+      "sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "a38dc7596df8ee940b135b9d363674d6d9d95be6a43bcb8a4bcd0278a55566a3",
+    "source_sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+    "driver_sha256": "0cad8ef979f151af6843666c7b912c00957a50cfa0f8b95d3cb7c7d3d6ad91f5",
+    "assembly_sha256": "ca8a6eb3a77c35ce38148c3df779b9045d2502a15c6343a32916675eca661645",
+    "exit_code": 0,
+    "checks": 128,
+    "failures": 0,
+    "seconds": 0.6211266660247929,
+    "total_seconds": 0.6565209170221351,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "legacy_switch",
+    "mode": "rename-control",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 13,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_13/tmp_13.c",
+      "sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "a38dc7596df8ee940b135b9d363674d6d9d95be6a43bcb8a4bcd0278a55566a3",
+    "source_sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+    "driver_sha256": "0cad8ef979f151af6843666c7b912c00957a50cfa0f8b95d3cb7c7d3d6ad91f5",
+    "assembly_sha256": "ca8a6eb3a77c35ce38148c3df779b9045d2502a15c6343a32916675eca661645",
+    "exit_code": 0,
+    "checks": 128,
+    "failures": 0,
+    "seconds": 0.5300025409669615,
+    "total_seconds": 0.5717432910460047,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "shadow_nested",
+    "mode": "compiler-control",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "shadow_nested"
+    },
+    "plan_sha256": "a92b6a5955bfa3a12a23c5ab7994e95fafb7b8d6387cf13e475c7cf3d90b899c",
+    "source_sha256": "e81fcbdff4aca6d8e251e0fcd8b408f3fe6a2e44cc78d786709c97a9788f9505",
+    "driver_sha256": "4487a223882909ab484575a13d2aab33964ca59754d6e82da94237f293f9e481",
+    "assembly_sha256": "02124218f4a3ad18813d7f33c08a869d9fb63eb390065342ccb7f0e77c7b0e8d",
+    "exit_code": 0,
+    "checks": 73,
+    "failures": 0,
+    "seconds": 0.5405100840143859,
+    "total_seconds": 0.5746096250368282,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "shadow_nested",
+    "mode": "rename-control",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "shadow_nested"
+    },
+    "plan_sha256": "a92b6a5955bfa3a12a23c5ab7994e95fafb7b8d6387cf13e475c7cf3d90b899c",
+    "source_sha256": "e81fcbdff4aca6d8e251e0fcd8b408f3fe6a2e44cc78d786709c97a9788f9505",
+    "driver_sha256": "4487a223882909ab484575a13d2aab33964ca59754d6e82da94237f293f9e481",
+    "assembly_sha256": "02124218f4a3ad18813d7f33c08a869d9fb63eb390065342ccb7f0e77c7b0e8d",
+    "exit_code": 0,
+    "checks": 73,
+    "failures": 0,
+    "seconds": 0.5366941670072265,
+    "total_seconds": 0.5795665420009755,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "array_stride",
+    "mode": "compiler-control",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "array_stride"
+    },
+    "plan_sha256": "633b19be16f461f33061d16c94479a785a3a2afa931dce66d6682b9585b211cf",
+    "source_sha256": "3dfa7825ec26093d9d8a00321f2c5fd73b38e8321aa8b7535832eac099517c24",
+    "driver_sha256": "73baba97925a9e1f8cfa762913fec1ea9fc37bfb4118cdc4c003bb4e848b3862",
+    "assembly_sha256": "cec7df20082fcfcdf1cf2f0fd47db27bcef84bdae08de68955387cc794d16bc1",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.5365762910223566,
+    "total_seconds": 0.5699168330174871,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "array_stride",
+    "mode": "rename-control",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "array_stride"
+    },
+    "plan_sha256": "633b19be16f461f33061d16c94479a785a3a2afa931dce66d6682b9585b211cf",
+    "source_sha256": "3dfa7825ec26093d9d8a00321f2c5fd73b38e8321aa8b7535832eac099517c24",
+    "driver_sha256": "73baba97925a9e1f8cfa762913fec1ea9fc37bfb4118cdc4c003bb4e848b3862",
+    "assembly_sha256": "cec7df20082fcfcdf1cf2f0fd47db27bcef84bdae08de68955387cc794d16bc1",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.5944855830166489,
+    "total_seconds": 0.6228484580060467,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "struct_offset",
+    "mode": "compiler-control",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "struct_offset"
+    },
+    "plan_sha256": "f11b1bfb4e6a0c56b638d5c335e92b20dffa6f2c7ab97bd4284a61ca0abefa3f",
+    "source_sha256": "849fefd45d0dc31dfa2c48fa5baea56a445c4be2a0225c206ae71745642fcbb1",
+    "driver_sha256": "35ec89fac8218a48a77593c7e48fc64043a10d773939b27809e08c65b3f0c431",
+    "assembly_sha256": "d674dcd74902c610a9e2559d347a238f9871f0b1143b222a90af6055892a1364",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.5391679999884218,
+    "total_seconds": 0.5748269999749027,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "struct_offset",
+    "mode": "rename-control",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "struct_offset"
+    },
+    "plan_sha256": "f11b1bfb4e6a0c56b638d5c335e92b20dffa6f2c7ab97bd4284a61ca0abefa3f",
+    "source_sha256": "849fefd45d0dc31dfa2c48fa5baea56a445c4be2a0225c206ae71745642fcbb1",
+    "driver_sha256": "35ec89fac8218a48a77593c7e48fc64043a10d773939b27809e08c65b3f0c431",
+    "assembly_sha256": "d674dcd74902c610a9e2559d347a238f9871f0b1143b222a90af6055892a1364",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.6083778340253048,
+    "total_seconds": 0.6525576249696314,
+    "run": "control-20261025-01",
+    "agent": null
+  },
+  {
+    "case": "legacy_gcd",
+    "mode": "direct",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 8,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_8/tmp_8.c",
+      "sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "3c70df842334c3aeae01ad0c8f237a1321784ed067b1c75500e0a27b2a077118",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 18.014959665946662,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 19315,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 456,
+            "reasoning_output_tokens": 269
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+    "driver_sha256": "a83e7d9ff428b41a73a6d70f7f8be2f818bda5713cd7ef4360a3257217fe159e",
+    "assembly_sha256": "15ebf8647e9d08c4d27719b014de51b26fadda905ac369864d1fade0483a4004",
+    "exit_code": 0,
+    "checks": 5225,
+    "failures": 0,
+    "seconds": 0.644389167020563,
+    "total_seconds": 18.723320625023916,
+    "run": "codex-smoke-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "legacy_gcd",
+    "mode": "lego-bundle",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 8,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_8/tmp_8.c",
+      "sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "3c70df842334c3aeae01ad0c8f237a1321784ed067b1c75500e0a27b2a077118",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 18.63268637500005,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 21211,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 669,
+            "reasoning_output_tokens": 282
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+    "driver_sha256": "a83e7d9ff428b41a73a6d70f7f8be2f818bda5713cd7ef4360a3257217fe159e",
+    "assembly_sha256": "fa29dee5c22defcff66630fd4ec0cb2996af5a70508b8a40763b7fee18740a7d",
+    "exit_code": 0,
+    "checks": 5225,
+    "failures": 0,
+    "seconds": 0.5517146660131402,
+    "total_seconds": 19.25901833397802,
+    "run": "codex-smoke-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "legacy_bitop",
+    "mode": "direct",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 21,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_21/tmp_21.c",
+      "sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "b54941729c1a364a7c77312e1b7c694823d372aaa8883bbbaf42f12029ae21e4",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 21.449370834045112,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 18514,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 701,
+            "reasoning_output_tokens": 368
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+    "driver_sha256": "2e974db9206af59018a993b336e228430297d9f76f3e3c01cbf779e609d11b23",
+    "assembly_sha256": "ecc3b849b7c2f1a19552c43ed6a9a92b2606f884a74b6f4faa911a9c1b065f51",
+    "exit_code": 0,
+    "checks": 216,
+    "failures": 0,
+    "seconds": 0.5402154999901541,
+    "total_seconds": 22.05453737505013,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "legacy_bitop",
+    "mode": "lego-bundle",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 21,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_21/tmp_21.c",
+      "sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "b54941729c1a364a7c77312e1b7c694823d372aaa8883bbbaf42f12029ae21e4",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 25.35951062501408,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 20857,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 877,
+            "reasoning_output_tokens": 424
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "6aaccd5a37d0458efd8d991cb0926cd61148bf4bdd6ce0f1b789354149e3570e",
+    "driver_sha256": "2e974db9206af59018a993b336e228430297d9f76f3e3c01cbf779e609d11b23",
+    "assembly_sha256": "8e102f2380192fa5b54742285818979b36fc624a87446ba7fafdfeea496b26c4",
+    "exit_code": 0,
+    "checks": 216,
+    "failures": 0,
+    "seconds": 0.5363176660030149,
+    "total_seconds": 25.96857658296358,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "legacy_switch",
+    "mode": "direct",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 13,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_13/tmp_13.c",
+      "sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "a38dc7596df8ee940b135b9d363674d6d9d95be6a43bcb8a4bcd0278a55566a3",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 26.027899459004402,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 18525,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 957,
+            "reasoning_output_tokens": 366
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+    "driver_sha256": "0cad8ef979f151af6843666c7b912c00957a50cfa0f8b95d3cb7c7d3d6ad91f5",
+    "assembly_sha256": "d7cc052afef8eabdc2ec10d8c8687e6c346a3919cf41b5de55b113cf632e99fd",
+    "exit_code": 0,
+    "checks": 128,
+    "failures": 0,
+    "seconds": 0.5571696670376696,
+    "total_seconds": 26.635845416982193,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "legacy_switch",
+    "mode": "lego-bundle",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 13,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_13/tmp_13.c",
+      "sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "a38dc7596df8ee940b135b9d363674d6d9d95be6a43bcb8a4bcd0278a55566a3",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 26.028952416963875,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 20627,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1051,
+            "reasoning_output_tokens": 241
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "da1cb96d63556953951ff714752016b4e4c62e6d2cba178ce0ec919b3fad37b1",
+    "driver_sha256": "0cad8ef979f151af6843666c7b912c00957a50cfa0f8b95d3cb7c7d3d6ad91f5",
+    "assembly_sha256": "1c3e9b7aa635a1cf3326427367b593237da6b9961fb46b05dc495b35c655c259",
+    "exit_code": 0,
+    "checks": 128,
+    "failures": 0,
+    "seconds": 0.5442580409580842,
+    "total_seconds": 26.64076879201457,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "shadow_nested",
+    "mode": "direct",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "shadow_nested"
+    },
+    "plan_sha256": "a92b6a5955bfa3a12a23c5ab7994e95fafb7b8d6387cf13e475c7cf3d90b899c",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 24.25756491703214,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 18438,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 577,
+            "reasoning_output_tokens": 374
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "e81fcbdff4aca6d8e251e0fcd8b408f3fe6a2e44cc78d786709c97a9788f9505",
+    "driver_sha256": "4487a223882909ab484575a13d2aab33964ca59754d6e82da94237f293f9e481",
+    "assembly_sha256": "11cb2b8030d9ffb84cab9fb59261bf79c9184d4b98cf61cadecd69fd0ebde56c",
+    "exit_code": 0,
+    "checks": 73,
+    "failures": 0,
+    "seconds": 0.5502716249902733,
+    "total_seconds": 24.86824500001967,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "shadow_nested",
+    "mode": "lego-bundle",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "shadow_nested"
+    },
+    "plan_sha256": "a92b6a5955bfa3a12a23c5ab7994e95fafb7b8d6387cf13e475c7cf3d90b899c",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 18.99248641700251,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 21012,
+            "cached_input_tokens": 17152,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 620,
+            "reasoning_output_tokens": 246
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "e81fcbdff4aca6d8e251e0fcd8b408f3fe6a2e44cc78d786709c97a9788f9505",
+    "driver_sha256": "4487a223882909ab484575a13d2aab33964ca59754d6e82da94237f293f9e481",
+    "assembly_sha256": "19d2d8687fd49628eaec7a860cccc26b2de5ac77b436a011f7a86d90cf62e7f6",
+    "exit_code": 0,
+    "checks": 73,
+    "failures": 0,
+    "seconds": 0.5722574579995126,
+    "total_seconds": 19.634471541037783,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "array_stride",
+    "mode": "direct",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "array_stride"
+    },
+    "plan_sha256": "633b19be16f461f33061d16c94479a785a3a2afa931dce66d6682b9585b211cf",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 27.959671792050358,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 18448,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 722,
+            "reasoning_output_tokens": 499
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "3dfa7825ec26093d9d8a00321f2c5fd73b38e8321aa8b7535832eac099517c24",
+    "driver_sha256": "73baba97925a9e1f8cfa762913fec1ea9fc37bfb4118cdc4c003bb4e848b3862",
+    "assembly_sha256": "4fc551b9759424e421d120bd69a40f0c14ff45abacc9881f8280c7dfb4369c7c",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.6325525409774855,
+    "total_seconds": 28.650906292023137,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "array_stride",
+    "mode": "lego-bundle",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "array_stride"
+    },
+    "plan_sha256": "633b19be16f461f33061d16c94479a785a3a2afa931dce66d6682b9585b211cf",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 24.272919333016034,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 21345,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 701,
+            "reasoning_output_tokens": 389
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "3dfa7825ec26093d9d8a00321f2c5fd73b38e8321aa8b7535832eac099517c24",
+    "driver_sha256": "73baba97925a9e1f8cfa762913fec1ea9fc37bfb4118cdc4c003bb4e848b3862",
+    "assembly_sha256": "2a81f2fdf0f41d569e56e27dffe979e5b422c5ae5651e87013caf6e2f6dc38ab",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.5601863330230117,
+    "total_seconds": 24.902995333017316,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "struct_offset",
+    "mode": "direct",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "struct_offset"
+    },
+    "plan_sha256": "f11b1bfb4e6a0c56b638d5c335e92b20dffa6f2c7ab97bd4284a61ca0abefa3f",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 18.57280849997187,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 18444,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 394,
+            "reasoning_output_tokens": 216
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "849fefd45d0dc31dfa2c48fa5baea56a445c4be2a0225c206ae71745642fcbb1",
+    "driver_sha256": "35ec89fac8218a48a77593c7e48fc64043a10d773939b27809e08c65b3f0c431",
+    "assembly_sha256": "8634f8db8049fc4c5a9f324c1a93fed76ac32c2395aa2a2dce5bb6fd396984dc",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.5896326249931008,
+    "total_seconds": 19.226159834011924,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "struct_offset",
+    "mode": "lego-bundle",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "struct_offset"
+    },
+    "plan_sha256": "f11b1bfb4e6a0c56b638d5c335e92b20dffa6f2c7ab97bd4284a61ca0abefa3f",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 24.766400874999817,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 21235,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 770,
+            "reasoning_output_tokens": 484
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "849fefd45d0dc31dfa2c48fa5baea56a445c4be2a0225c206ae71745642fcbb1",
+    "driver_sha256": "35ec89fac8218a48a77593c7e48fc64043a10d773939b27809e08c65b3f0c431",
+    "assembly_sha256": "e97ce4ea0a173fc47bbd978075a3b8b7ecbb623ff9af11eca50473cbef995e99",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.595363707980141,
+    "total_seconds": 25.432966125023086,
+    "run": "codex-pilot-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "struct_offset",
+    "mode": "lego-block",
+    "status": "passed",
+    "origin": {
+      "kind": "new-diagnostic",
+      "purpose": "struct_offset"
+    },
+    "plan_sha256": "f11b1bfb4e6a0c56b638d5c335e92b20dffa6f2c7ab97bd4284a61ca0abefa3f",
+    "generation": [
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 13.75006058299914,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 20723,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 168,
+            "reasoning_output_tokens": 126
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      },
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 24.537828249973245,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 21103,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 581,
+            "reasoning_output_tokens": 353
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      },
+      {
+        "backend": "codex",
+        "cli_version": "codex-cli 0.162.1",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 10.9766606669873,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input_tokens": 20713,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 69,
+            "reasoning_output_tokens": 29
+          }
+        ],
+        "reported_models": [],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "849fefd45d0dc31dfa2c48fa5baea56a445c4be2a0225c206ae71745642fcbb1",
+    "driver_sha256": "35ec89fac8218a48a77593c7e48fc64043a10d773939b27809e08c65b3f0c431",
+    "assembly_sha256": "07654a0c629cef44ee1606dec5257a2c6906246bf8e6f2c4ca21851ea9468d77",
+    "exit_code": 0,
+    "checks": 1000,
+    "failures": 0,
+    "seconds": 0.5425066670286469,
+    "total_seconds": 49.9875934169977,
+    "run": "codex-isolated-20261025-01",
+    "agent": "codex"
+  },
+  {
+    "case": "legacy_gcd",
+    "mode": "lego-bundle",
+    "status": "passed",
+    "origin": {
+      "kind": "archived-source",
+      "case_id": 8,
+      "path": "sandbox/failed_gpt-4.1_arm_simple_0_25_20250506_151655/failed_8/tmp_8.c",
+      "sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+      "note": "Exact saved C source; new deterministic differential inputs, not a replay of original ExeBench IO."
+    },
+    "plan_sha256": "3c70df842334c3aeae01ad0c8f237a1321784ed067b1c75500e0a27b2a077118",
+    "generation": [
+      {
+        "backend": "pi",
+        "cli_version": "1.2.0",
+        "requested_model": null,
+        "model_selection": "existing CLI configuration",
+        "timeout_seconds": 300,
+        "tool_policy": "no tools; reject traces containing tool calls",
+        "seconds": 15.490942041040398,
+        "exit_code": 0,
+        "usage": [
+          {
+            "input": 5208,
+            "output": 677,
+            "cacheRead": 0,
+            "cacheWrite": 0,
+            "reasoning": 0,
+            "totalTokens": 5885,
+            "cost": {
+              "input": 0.02604,
+              "output": 0.016925000000000003,
+              "cacheRead": 0,
+              "cacheWrite": 0,
+              "total": 0.042965
+            }
+          }
+        ],
+        "reported_models": [
+          "mco-6"
+        ],
+        "tools_used": []
+      }
+    ],
+    "source_sha256": "70d5369a6118922d65a3d98bcdad769621472c84e63dfa5a032ef2b6b2713411",
+    "driver_sha256": "a83e7d9ff428b41a73a6d70f7f8be2f818bda5713cd7ef4360a3257217fe159e",
+    "assembly_sha256": "cd0c43370d226349099747c6e3df4e30e917812c5ac0ea9453fa21c01a93a7b9",
+    "exit_code": 0,
+    "checks": 5225,
+    "failures": 0,
+    "seconds": 0.6012833749991842,
+    "total_seconds": 16.264496207993943,
+    "run": "pi-smoke-20261025-01",
+    "agent": "pi"
+  }
+]

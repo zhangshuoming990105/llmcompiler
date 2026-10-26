@@ -1,0 +1,4265 @@
+[
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5140,
+        "output": 56,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5196,
+        "cost": {
+          "input": 0.0257,
+          "output": 0.0014,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.0271
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s000",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5003,
+        "output": 52,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5055,
+        "cost": {
+          "input": 0.025015000000000003,
+          "output": 0.0013000000000000002,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.026315
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_init",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5132,
+        "output": 78,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5210,
+        "cost": {
+          "input": 0.025660000000000002,
+          "output": 0.0019500000000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.027610000000000003
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5042,
+        "output": 55,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5097,
+        "cost": {
+          "input": 0.025210000000000003,
+          "output": 0.0013750000000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.026585000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s000",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5050,
+        "output": 69,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5119,
+        "cost": {
+          "input": 0.02525,
+          "output": 0.0017250000000000002,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.026975000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5065,
+        "output": 78,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5143,
+        "cost": {
+          "input": 0.025325000000000004,
+          "output": 0.0019500000000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.027275000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s000",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s001_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1997,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8554,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.049925000000000004,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08271
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s001_then_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1382,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7939,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.034550000000000004,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.067335
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s001_then_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6053,
+        "output": 1209,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7262,
+        "cost": {
+          "input": 0.030265000000000004,
+          "output": 0.030225000000000002,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.06049
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s001_else_left_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6053,
+        "output": 918,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 6971,
+        "cost": {
+          "input": 0.030265000000000004,
+          "output": 0.02295,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.053215000000000005
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s001_else_left_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6556,
+        "output": 1907,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8463,
+        "cost": {
+          "input": 0.032780000000000004,
+          "output": 0.047675,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.080455
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s001_else_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s002_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1797,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8354,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.044925,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.07771
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s002_then_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2445,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 9002,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.061125000000000006,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.09391000000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s002_then_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2267,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8824,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.056675,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08946000000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s002_else_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2111,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8668,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.052775,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08556
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s002_else_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s003_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1759,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8316,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.043975,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.07676
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s003_then_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2123,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8680,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.053075000000000004,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08586
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s003_then_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1502,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8059,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.03755,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.07033500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s003_else_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6556,
+        "output": 1236,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7792,
+        "cost": {
+          "input": 0.032780000000000004,
+          "output": 0.0309,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.06368
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s003_else_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s004_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6053,
+        "output": 1193,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7246,
+        "cost": {
+          "input": 0.030265000000000004,
+          "output": 0.029825,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.060090000000000005
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s004_then_left_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6053,
+        "output": 1147,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7200,
+        "cost": {
+          "input": 0.030265000000000004,
+          "output": 0.028675000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.058940000000000006
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s004_then_left_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6053,
+        "output": 1095,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7148,
+        "cost": {
+          "input": 0.030265000000000004,
+          "output": 0.027375,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.057640000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s004_then_right_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6053,
+        "output": 1069,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7122,
+        "cost": {
+          "input": 0.030265000000000004,
+          "output": 0.026725000000000002,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.056990000000000006
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s004_then_right_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1374,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7931,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.03435,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.067135
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s004_else_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1550,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8107,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.03875,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.071535
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s004_else_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s005_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2016,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8573,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.0504,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08318500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s005_then_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1160,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7717,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.029,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.06178500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s005_then_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1645,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8202,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.041125,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.07391
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s005_else_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 15.598488167000141,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 8276,
+        "output": 1633,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 9909,
+        "cost": {
+          "input": 0.04138,
+          "output": 0.040825,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.082205
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s006_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2119,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8676,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.052975,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08576
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s006_then_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1615,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8172,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.040375,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.07316
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s006_then_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2235,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8792,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.055875,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08866
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s006_else_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 13.229771332999917,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 8066,
+        "output": 1380,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 9446,
+        "cost": {
+          "input": 0.040330000000000005,
+          "output": 0.0345,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.07483000000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s007_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 21.764260709000155,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 8867,
+        "output": 2396,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11263,
+        "cost": {
+          "input": 0.044335000000000006,
+          "output": 0.0599,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10423500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2131,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8688,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.053275,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08606
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s007_then_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1346,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 7903,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.03365,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.066435
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s007_else_left",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 1883,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8440,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.047075,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.07986
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s007_else_right",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s008_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 28.438997375000326,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10347,
+        "output": 2757,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 13104,
+        "cost": {
+          "input": 0.051735,
+          "output": 0.068925,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.12066
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 3559,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11168,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.088975,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.12702
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s008_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s009_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 3230,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10839,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.08075,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.11879500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s009_then",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 3109,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10717,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.077725,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.115765
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s009_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 110,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5332,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.0027500000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02886
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s010_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 26.809003416999985,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10909,
+        "output": 3078,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 13987,
+        "cost": {
+          "input": 0.054545,
+          "output": 0.07695,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.131495
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 3963,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11571,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.09907500000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.13711500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s010_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 111,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5334,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.002775,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028890000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s011_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 3087,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10696,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.07717500000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.11522000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s011_then",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 2232,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 9840,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.0558,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.09384
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s011_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 112,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5335,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.0028,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028915000000000003
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s012_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 3274,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10883,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.08185,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.119895
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s012_then",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 3356,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10964,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.0839,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.12194
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s012_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 111,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5334,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.002775,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028890000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s013_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2638,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10247,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.06595000000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.103995
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s013_then",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 30.40809016700041,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10960,
+        "output": 3118,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 14078,
+        "cost": {
+          "input": 0.0548,
+          "output": 0.07795,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.13275
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 111,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5334,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.002775,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028890000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s014_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 60.52453170900026,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 9962,
+        "output": 2052,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 12014,
+        "cost": {
+          "input": 0.04981000000000001,
+          "output": 0.051300000000000005,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10111
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 29.53822795799988,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 11262,
+        "output": 3613,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 14875,
+        "cost": {
+          "input": 0.056310000000000006,
+          "output": 0.090325,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.14663500000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 113,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5336,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.0028250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028940000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s015_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 3944,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11552,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.09860000000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.13664
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s015_then",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 3287,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10895,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.082175,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.120215
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s015_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 113,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5336,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.0028250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028940000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s016_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2311,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 9920,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.057775,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.09582
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s016_then",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 3079,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10687,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.076975,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.115015
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s016_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 113,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5336,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.0028250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028940000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s017_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 3048,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10657,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.0762,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.11424500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s017_then",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2805,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10414,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.070125,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10817000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s017_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 113,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5336,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.0028250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028940000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s018_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 28.4921260000001,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 11033,
+        "output": 3315,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 14348,
+        "cost": {
+          "input": 0.055165000000000006,
+          "output": 0.082875,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.13804
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 25.16613595799936,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10522,
+        "output": 2791,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 13313,
+        "cost": {
+          "input": 0.052610000000000004,
+          "output": 0.069775,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.12238500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 113,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5336,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.0028250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028940000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s019_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 37.381370457999765,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 12387,
+        "output": 4684,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 17071,
+        "cost": {
+          "input": 0.061935000000000004,
+          "output": 0.11710000000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.179035
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2355,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 9964,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.058875000000000004,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.09692
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s019_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5223,
+        "output": 120,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5343,
+        "cost": {
+          "input": 0.026115000000000003,
+          "output": 0.003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.029115000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s020_condition",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 2747,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10355,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.068675,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.106715
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s020_then",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7607,
+        "output": 2611,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10218,
+        "cost": {
+          "input": 0.038035000000000006,
+          "output": 0.065275,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10331000000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s020_else",
+    "reused_generation_seconds": 0,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 122,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5346,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.00305,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02917
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s021_condition",
+    "reused_generation_seconds": 4.242622042000221,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2873,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10482,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.071825,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10987
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s021_then",
+    "reused_generation_seconds": 27.792189249999865,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 24.628399625000384,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10206,
+        "output": 2738,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 12944,
+        "cost": {
+          "input": 0.051030000000000006,
+          "output": 0.06845,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.11948
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 121,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5345,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.0030250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.029145
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s022_condition",
+    "reused_generation_seconds": 5.762486707999415,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 26.46401849999984,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10960,
+        "output": 3103,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 14063,
+        "cost": {
+          "input": 0.0548,
+          "output": 0.077575,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.13237500000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 3692,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11301,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.09230000000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.13034500000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s022_else",
+    "reused_generation_seconds": 31.800646290999794,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 113,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5337,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.0028250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028945000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s023_condition",
+    "reused_generation_seconds": 7.5609800419997555,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7607,
+        "output": 3417,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11024,
+        "cost": {
+          "input": 0.038035000000000006,
+          "output": 0.085425,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.12346000000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s023_then",
+    "reused_generation_seconds": 30.52072679200046,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 3902,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11511,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.09755,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.135595
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s023_else",
+    "reused_generation_seconds": 34.10122299999966,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 113,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5337,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.0028250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028945000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s024_condition",
+    "reused_generation_seconds": 8.208014124999863,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 25.263218291999692,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 9774,
+        "output": 2156,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11930,
+        "cost": {
+          "input": 0.048870000000000004,
+          "output": 0.0539,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10277
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 30.882304707999538,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 11097,
+        "output": 3577,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 14674,
+        "cost": {
+          "input": 0.05548500000000001,
+          "output": 0.089425,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.14491
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 121,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5345,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.0030250000000000003,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.029145
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s025_condition",
+    "reused_generation_seconds": 3.904742624999926,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 19.90427825000006,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 9616,
+        "output": 2120,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11736,
+        "cost": {
+          "input": 0.048080000000000005,
+          "output": 0.053000000000000005,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10108
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 29.410422500000095,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10912,
+        "output": 3140,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 14052,
+        "cost": {
+          "input": 0.054560000000000004,
+          "output": 0.0785,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.13306
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 114,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5338,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.00285,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028970000000000003
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s026_condition",
+    "reused_generation_seconds": 3.6882189589996415,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7607,
+        "output": 2683,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10290,
+        "cost": {
+          "input": 0.038035000000000006,
+          "output": 0.06707500000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10511000000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s026_then",
+    "reused_generation_seconds": 25.472237250000035,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 4413,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 12022,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.110325,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.14837
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s026_else",
+    "reused_generation_seconds": 37.627306707999196,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 114,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5338,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.00285,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028970000000000003
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s027_condition",
+    "reused_generation_seconds": 4.374551625000095,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 25.68729366699972,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10374,
+        "output": 2659,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 13033,
+        "cost": {
+          "input": 0.051870000000000006,
+          "output": 0.066475,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.118345
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2221,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 9830,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.055525000000000005,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.09357000000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s027_else",
+    "reused_generation_seconds": 23.355261167000208,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 123,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5347,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.003075,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.029195000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s028_condition",
+    "reused_generation_seconds": 32.01149916699978,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7608,
+        "output": 2468,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10076,
+        "cost": {
+          "input": 0.038040000000000004,
+          "output": 0.061700000000000005,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.09974000000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s028_then",
+    "reused_generation_seconds": 23.104826666999543,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2567,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10176,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.06417500000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10222
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s028_else",
+    "reused_generation_seconds": 25.398749040999974,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 114,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5338,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.00285,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028970000000000003
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s029_condition",
+    "reused_generation_seconds": 4.047421000000213,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2498,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10107,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.062450000000000006,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.100495
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s029_then",
+    "reused_generation_seconds": 21.894883708000634,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2868,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10477,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.0717,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10974500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s029_else",
+    "reused_generation_seconds": 28.479505917000097,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5224,
+        "output": 114,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5338,
+        "cost": {
+          "input": 0.02612,
+          "output": 0.00285,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028970000000000003
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s030_condition",
+    "reused_generation_seconds": 3.6438246249999793,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 3727,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11336,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.09317500000000001,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.13122
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s030_then",
+    "reused_generation_seconds": 32.4645650829998,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 4413,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 12022,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.110325,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.14837
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s030_else",
+    "reused_generation_seconds": 36.08655095799986,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5225,
+        "output": 123,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5348,
+        "cost": {
+          "input": 0.026125000000000002,
+          "output": 0.003075,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.029200000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s031_condition",
+    "reused_generation_seconds": 3.443255582999882,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 21.834748875000514,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 8917,
+        "output": 2430,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 11347,
+        "cost": {
+          "input": 0.04458500000000001,
+          "output": 0.060750000000000005,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10533500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 6557,
+        "output": 2223,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 8780,
+        "cost": {
+          "input": 0.032785,
+          "output": 0.055575,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.08836
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s031_then_right",
+    "reused_generation_seconds": 19.895394791999934,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 19.30314104199988,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 9978,
+        "output": 2135,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 12113,
+        "cost": {
+          "input": 0.049890000000000004,
+          "output": 0.053375000000000006,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.10326500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5222,
+        "output": 91,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5313,
+        "cost": {
+          "input": 0.02611,
+          "output": 0.002275,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.028385
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s032_condition",
+    "reused_generation_seconds": 3.267933250000169,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 7609,
+        "output": 2414,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 10023,
+        "cost": {
+          "input": 0.038045,
+          "output": 0.06035,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.09839500000000001
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s001_body_s032_then",
+    "reused_generation_seconds": 21.32382349999989,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 23.15999683299924,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 10222,
+        "output": 2585,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 12807,
+        "cost": {
+          "input": 0.05111,
+          "output": 0.064625,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.115735
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "extracted final JSON document from response envelope",
+    "reused": false
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5378,
+        "output": 128,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5506,
+        "cost": {
+          "input": 0.02689,
+          "output": 0.0032,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.030090000000000002
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_body_s002",
+    "reused_generation_seconds": 4.544130250000308,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 5003,
+        "output": 71,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5074,
+        "cost": {
+          "input": 0.025015000000000003,
+          "output": 0.001775,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.02679
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s001_increment",
+    "reused_generation_seconds": 3.4099956250001924,
+    "reused": true
+  },
+  {
+    "backend": "pi",
+    "cli_version": "1.2.0",
+    "requested_model": null,
+    "model_selection": "existing CLI configuration",
+    "timeout_seconds": 120,
+    "tool_policy": "no tools; reject traces containing tool calls",
+    "seconds": 0,
+    "exit_code": 0,
+    "usage": [
+      {
+        "input": 4999,
+        "output": 54,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 5053,
+        "cost": {
+          "input": 0.024995000000000003,
+          "output": 0.00135,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0.026345000000000004
+        }
+      }
+    ],
+    "reported_models": [
+      "mco-6"
+    ],
+    "tools_used": [],
+    "output_normalization": "none",
+    "reused_from": "runs/pi-long-lowered-20261025-04/r_s002",
+    "reused_generation_seconds": 6.177793875000134,
+    "reused": true
+  }
+]

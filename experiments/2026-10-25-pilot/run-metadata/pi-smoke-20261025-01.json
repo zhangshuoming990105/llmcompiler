@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-10-25T03:49:21.784072+00:00",
+  "target": "arm64-macos",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+  "manifest_sha256": "11a53ea88742d3f54a21f370f5f0696cf228b0af4280ed99bf117d5abe0a4b3a",
+  "skill_sha256": "b71609b07e85d3f2dade9e07c4d973fceec7b78b31c26f85efe5d711d18acd06",
+  "protocol_sha256": "7def6b0156d691eec6a5011fa59452ec6dedec2e7e8b1ba86d654353cd8e0586",
+  "modes": [
+    "lego-bundle"
+  ],
+  "agent": "pi",
+  "model": null,
+  "repair_budget": 0,
+  "generation_feedback": "none",
+  "case_ids": [
+    "legacy_gcd"
+  ]
+}

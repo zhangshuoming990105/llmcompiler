@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "description": "Recursive decomposition diagnostics and a deterministic synthetic long-function stress test. Not a real application or an ExeBench replay.",
+  "cases": [
+    {
+      "id": "nested_control",
+      "function": "nested_flow",
+      "source": "nested_control/source.c",
+      "driver": "nested_control/driver.c",
+      "origin": {
+        "kind": "new-diagnostic",
+        "purpose": "nested for/while/do/switch; free and local break/continue; switch fall-through"
+      }
+    },
+    {
+      "id": "long_nested",
+      "function": "long_kernel",
+      "source": "long_nested/source.c",
+      "driver": "long_nested/driver.c",
+      "origin": {
+        "kind": "generated-stress",
+        "generator": "generate_long.py",
+        "seed": 20261025,
+        "stages": 32,
+        "statements_per_arm": 32,
+        "purpose": "2000+ line single function with nested loops, 32 data-dependent branches, unsigned arithmetic and buffer state"
+      }
+    }
+  ]
+}
